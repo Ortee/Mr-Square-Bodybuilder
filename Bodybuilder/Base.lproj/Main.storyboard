@@ -36,7 +36,7 @@
         <!--PRACA-->
         <scene sceneID="9Tq-IG-8ki">
             <objects>
-                <viewController id="sOR-Xp-XiE" sceneMemberID="viewController">
+                <viewController id="sOR-Xp-XiE" customClass="ViewController" customModule="Bodybuilder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MWm-Da-id5"/>
                         <viewControllerLayoutGuide type="bottom" id="toE-DA-Zir"/>
@@ -52,6 +52,9 @@
                                 <state key="normal" title="PRACUJ">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="working:" destination="sOR-Xp-XiE" eventType="touchUpInside" id="dfu-tX-0Xk"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="yH2-JJ-UXK">
                                 <frame key="frameInset" minY="101" width="375" height="370"/>
@@ -69,7 +72,7 @@
         <!--RESTAURACJA-->
         <scene sceneID="cWY-3j-ikF">
             <objects>
-                <viewController id="Tpq-xm-qKM" sceneMemberID="viewController">
+                <viewController id="Tpq-xm-qKM" customClass="ViewController" customModule="Bodybuilder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eVC-bg-RjW"/>
                         <viewControllerLayoutGuide type="bottom" id="40Y-EW-oTe"/>
@@ -85,6 +88,9 @@
                                 <state key="normal" title="JEDZ">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="eating:" destination="Tpq-xm-qKM" eventType="touchUpInside" id="6n7-88-Dv4"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="0of-7k-cmS">
                                 <frame key="frameInset" minY="78" width="375" height="370"/>
@@ -102,7 +108,7 @@
         <!--GYM-->
         <scene sceneID="1Lb-zN-ifR">
             <objects>
-                <viewController title="GYM" id="CxM-ry-SN0" sceneMemberID="viewController">
+                <viewController title="GYM" id="CxM-ry-SN0" customClass="ViewController" customModule="Bodybuilder" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NEt-2m-pS6"/>
                         <viewControllerLayoutGuide type="bottom" id="IRg-mo-xpt"/>
@@ -111,18 +117,21 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zmv-7L-gif">
-                                <frame key="frameInset" minX="115" minY="563" width="144" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="PAKUJ">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="PzE-LJ-DAf">
                                 <frame key="frameInset" minY="82" width="375" height="370"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5hZ-8d-Yo5">
+                                <frame key="frameInset" minX="115" minY="563" width="144" height="52"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="TRENUJ">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="training:" destination="CxM-ry-SN0" eventType="touchUpInside" id="eoC-9Y-X8a"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

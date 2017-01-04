@@ -9,17 +9,29 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    var bodybuilder: Bodybuilder = Bodybuilder()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 
+    @IBAction func training(_ sender: UIButton) {
+        bodybuilder.increaseStrength()
+    }
+    
+    @IBAction func eating(_ sender: UIButton) {
+        bodybuilder.increaseHunger()
+    }
+    
+    
+    @IBAction func working(_ sender: UIButton) {
+        bodybuilder.increaseCash()
+    }
+    
 }
-
