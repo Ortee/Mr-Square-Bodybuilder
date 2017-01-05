@@ -9,9 +9,7 @@
 import UIKit
 
 class TrainViewController: UIViewController {
-    
-    var bodybuilder = (UIApplication.shared.delegate as! AppDelegate).bodybuilder
-    
+        
     @IBOutlet var strength: UILabel!
     @IBOutlet var hunger: UILabel!
     @IBOutlet var cash: UILabel!

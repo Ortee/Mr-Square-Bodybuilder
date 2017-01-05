@@ -99,3 +99,6 @@ class Bodybuilder {
         cashIncreaseValue += step;
     }
 }
+
+var bodybuilder: Bodybuilder = Bodybuilder()
+

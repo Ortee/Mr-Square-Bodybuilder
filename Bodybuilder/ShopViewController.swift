@@ -9,9 +9,7 @@
 import UIKit
 
 class ShopeViewController: UIViewController {
-    
-    var bodybuilder = (UIApplication.shared.delegate as! AppDelegate).bodybuilder
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
     }

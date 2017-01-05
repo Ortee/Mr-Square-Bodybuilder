@@ -10,8 +10,6 @@ import UIKit
 
 class StatsViewController: UIViewController {
     
-    var bodybuilder = (UIApplication.shared.delegate as! AppDelegate).bodybuilder
-
     @IBOutlet weak var trainingValue: UILabel!
     @IBOutlet weak var hungerValue: UILabel!
     @IBOutlet weak var cashValue: UILabel!
