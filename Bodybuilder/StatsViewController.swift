@@ -15,9 +15,10 @@ class StatsViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet var gpsX: UILabel!
     @IBOutlet var gpsY: UILabel!
     
-    func getNerbyGyms(latitude: Double, longitude: Double) -> [Gym]{
+    func getNerbyGyms(latitude: Double, longitude: Double) {
         
         let url = URL(string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(latitude),\(longitude)&radius=500&type=gym&keyword=silownia&key=AIzaSyDJo8nIHl3JbPGLmpyZbMA7PkQMZj_AeUw")
+        
         URLSession.shared.dataTask(with:url!, completionHandler: {(data, response, error) in
             guard let data = data, error == nil else { return }
             
@@ -36,7 +37,7 @@ class StatsViewController: UIViewController, CLLocationManagerDelegate {
                     )
                     
                 }
-                print(gymsArray)
+                gymList.setGyms(lGym: gymsArray)
             } catch let error as NSError {
                 print(error)
             }
@@ -57,8 +58,9 @@ class StatsViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBAction func getGymsButton(_ sender: AnyObject) {
         getNerbyGyms(latitude: 52.4388894, longitude: 16.9184323)
-        
+        print("gymList", gymList.getGyms())
     }
+    
     var location: CLLocation! {
         didSet {
             gpsX.text = String(location.coordinate.latitude)

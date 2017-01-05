@@ -38,3 +38,18 @@ class Gym {
     }
     
 }
+
+class Gyms {
+    var list:[Gym] = []
+    
+    func setGyms(lGym: [Gym]) {
+        list = lGym
+    }
+    
+    func getGyms() -> [Gym] {
+        return list
+    }
+
+}
+
+var gymList: Gyms = Gyms();
