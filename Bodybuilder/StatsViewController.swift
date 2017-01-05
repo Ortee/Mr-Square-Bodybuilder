@@ -7,25 +7,52 @@
 //
 
 import UIKit
+import CoreLocation
 
-class StatsViewController: UIViewController {
+class StatsViewController: UIViewController, CLLocationManagerDelegate {
     
-    @IBOutlet weak var trainingValue: UILabel!
-    @IBOutlet weak var hungerValue: UILabel!
-    @IBOutlet weak var cashValue: UILabel!
+    var locationManager: CLLocationManager!
+    @IBOutlet var gpsX: UILabel!
+    @IBOutlet var gpsY: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        checkCoreLocationPermission()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func refresh(_ sender: AnyObject) {
-        trainingValue.text = String(bodybuilder.getStrength())
-        hungerValue.text = String(bodybuilder.getHunger())
-        cashValue.text = String(bodybuilder.getCash())
+    var location: CLLocation! {
+        didSet {
+            gpsX.text = String(location.coordinate.latitude)
+            gpsY.text = String(location.coordinate.longitude)
+        }
     }
+    
+    func checkCoreLocationPermission() {
+        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
+            locationManager.startUpdatingLocation()
+        } else if CLLocationManager.authorizationStatus() == .notDetermined {
+            locationManager.requestWhenInUseAuthorization()
+        } else if CLLocationManager.authorizationStatus() == .restricted {
+            print("UNAUTHORIZED GPS LOCALIZATION")
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        location = locations.last
+        locationManager.stopUpdatingLocation()
+        
+    }
+    
+    @IBAction func gpsUpdate(_ sender: AnyObject) {
+        locationManager.startUpdatingLocation()
+    }
+    
     
 }
