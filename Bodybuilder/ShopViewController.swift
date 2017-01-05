@@ -21,15 +21,14 @@ class ShopeViewController: UIViewController {
     }
     
     @IBAction func steak(_ sender: AnyObject) {
-        bodybuilder.boostHunger(step: 2)
-    }
+        bodybuilder.boostHungerIncreaseValue(step: 2)    }
     
     @IBAction func macbook(_ sender: AnyObject) {
-        bodybuilder.boostCash(step: 2)
+        bodybuilder.boostCashIncreaseValue(step: 2)
     }
     
     @IBAction func creatine(_ sender: AnyObject) {
-        bodybuilder.boostStrength(step: 2)
+        bodybuilder.boostStrengthIncreaseValue(step: 2)
     }
     
     
