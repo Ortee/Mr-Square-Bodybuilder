@@ -8,27 +8,29 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ShopeViewController: UIViewController {
     
     var bodybuilder = (UIApplication.shared.delegate as! AppDelegate).bodybuilder
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func training(_ sender: AnyObject) {
-        bodybuilder.increaseStrength()
-    }
-    @IBAction func eating(_ sender: AnyObject) {
-        bodybuilder.increaseHunger()
+    @IBAction func steak(_ sender: AnyObject) {
+        bodybuilder.boostHunger(step: 2)
     }
     
-    @IBAction func working(_ sender: AnyObject) {
-        bodybuilder.increaseCash()
+    @IBAction func macbook(_ sender: AnyObject) {
+        bodybuilder.boostCash(step: 2)
     }
+    
+    @IBAction func creatine(_ sender: AnyObject) {
+        bodybuilder.boostStrength(step: 2)
+    }
+    
+    
 }

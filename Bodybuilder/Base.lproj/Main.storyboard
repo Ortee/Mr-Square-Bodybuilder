@@ -92,7 +92,7 @@
         <!--PRACA-->
         <scene sceneID="9Tq-IG-8ki">
             <objects>
-                <viewController id="sOR-Xp-XiE" customClass="ViewController" customModule="Bodybuilder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="sOR-Xp-XiE" customClass="TrainViewController" customModule="Bodybuilder" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="MWm-Da-id5"/>
                         <viewControllerLayoutGuide type="bottom" id="toE-DA-Zir"/>
@@ -130,7 +130,7 @@
         <!--RESTAURACJA-->
         <scene sceneID="cWY-3j-ikF">
             <objects>
-                <viewController id="Tpq-xm-qKM" customClass="ViewController" customModule="Bodybuilder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Tpq-xm-qKM" customClass="TrainViewController" customModule="Bodybuilder" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eVC-bg-RjW"/>
                         <viewControllerLayoutGuide type="bottom" id="40Y-EW-oTe"/>
@@ -168,7 +168,7 @@
         <!--GYM-->
         <scene sceneID="1Lb-zN-ifR">
             <objects>
-                <viewController title="GYM" id="CxM-ry-SN0" customClass="ViewController" customModule="Bodybuilder" sceneMemberID="viewController">
+                <viewController title="GYM" id="CxM-ry-SN0" customClass="TrainViewController" customModule="Bodybuilder" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NEt-2m-pS6"/>
                         <viewControllerLayoutGuide type="bottom" id="IRg-mo-xpt"/>
@@ -219,11 +219,84 @@
                         <segue destination="CxM-ry-SN0" kind="relationship" relationship="viewControllers" id="R6k-cq-0ql"/>
                         <segue destination="Tpq-xm-qKM" kind="relationship" relationship="viewControllers" id="3Si-Ku-CVb"/>
                         <segue destination="sOR-Xp-XiE" kind="relationship" relationship="viewControllers" id="yYh-98-Yjy"/>
+                        <segue destination="0KP-yO-cCH" kind="relationship" relationship="viewControllers" id="beO-Hc-GXC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jnb-2t-y7a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="110.19490254872565"/>
+        </scene>
+        <!--Shop-->
+        <scene sceneID="yFz-ho-sla">
+            <objects>
+                <viewController title="Shop" id="0KP-yO-cCH" customClass="ShopeViewController" customModule="Bodybuilder" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TTb-tV-1ag"/>
+                        <viewControllerLayoutGuide type="bottom" id="3KP-ir-2O5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1hA-Fs-Siv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9X3-R2-Khr">
+                                <frame key="frameInset" minX="16" minY="28" width="343" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.54616683259999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="KREATYNA (MOC +2)">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="creatine:" destination="0KP-yO-cCH" eventType="touchUpInside" id="v3z-iD-emQ"/>
+                                    <action selector="creating:" destination="0KP-yO-cCH" eventType="touchUpInside" id="jmT-ld-ocJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OWf-jc-8Fk">
+                                <frame key="frameInset" minX="16" minY="138" width="343" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.54616683259999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="STEK (NAJEDZENIE +2)">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="steak:" destination="0KP-yO-cCH" eventType="touchUpInside" id="PTu-k4-5qq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DzY-nq-hgi">
+                                <frame key="frameInset" minX="16" minY="248" width="343" height="102"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.54616683259999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="MAC BOOK (ZAROBKI +2)">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="macbook:" destination="0KP-yO-cCH" eventType="touchUpInside" id="Z0k-fp-DQK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Sklep" id="XXG-OW-sjN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YQz-Gd-FyY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1109.5999999999999" y="-545.57721139430294"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="n4Z-3G-ml4">
+            <objects>
+                <viewController id="UNX-L3-Z1t" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ATU-5f-vny"/>
+                        <viewControllerLayoutGuide type="bottom" id="jVf-s9-3gb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GSD-f4-Biq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cdA-ca-Y4L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>
