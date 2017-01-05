@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8D4A11BC1E1D5F29009E6916 /* bodybuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4A11BB1E1D5F29009E6916 /* bodybuilder.swift */; };
+		8DA97B081E1DD95A00565D2B /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA97B071E1DD95A00565D2B /* StatsViewController.swift */; };
 		8DE983811E034377001BFC7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE983801E034377001BFC7A /* AppDelegate.swift */; };
 		8DE983831E034377001BFC7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE983821E034377001BFC7A /* ViewController.swift */; };
 		8DE983861E034377001BFC7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE983841E034377001BFC7A /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		8D4A11BB1E1D5F29009E6916 /* bodybuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bodybuilder.swift; sourceTree = "<group>"; };
+		8DA97B071E1DD95A00565D2B /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		8DE9837D1E034377001BFC7A /* Bodybuilder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bodybuilder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DE983801E034377001BFC7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DE983821E034377001BFC7A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				8DE983891E034377001BFC7A /* LaunchScreen.storyboard */,
 				8DE9838C1E034377001BFC7A /* Info.plist */,
 				8D4A11BB1E1D5F29009E6916 /* bodybuilder.swift */,
+				8DA97B071E1DD95A00565D2B /* StatsViewController.swift */,
 			);
 			path = Bodybuilder;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			files = (
 				8DE983831E034377001BFC7A /* ViewController.swift in Sources */,
 				8DE983811E034377001BFC7A /* AppDelegate.swift in Sources */,
+				8DA97B081E1DD95A00565D2B /* StatsViewController.swift in Sources */,
 				8D4A11BC1E1D5F29009E6916 /* bodybuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
