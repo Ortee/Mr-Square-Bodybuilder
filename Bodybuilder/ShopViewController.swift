@@ -18,16 +18,4 @@ class ShopeViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func steak(_ sender: AnyObject) {
-        bodybuilder.boostHungerIncreaseValue(step: 2)    }
-    
-    @IBAction func macbook(_ sender: AnyObject) {
-        bodybuilder.boostCashIncreaseValue(step: 2)
-    }
-    
-    @IBAction func creatine(_ sender: AnyObject) {
-        bodybuilder.boostStrengthIncreaseValue(step: 2)
-    }
-    
-    
 }
