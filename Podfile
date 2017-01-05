@@ -1,4 +1,4 @@
 source 'https://github.com/CocoaPods/Specs.git'
-target 'BatoregoTeam.Bodybuilder' do
+target 'Bodybuilder' do
 pod 'GoogleMaps'
 end
