@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		8D4A11BC1E1D5F29009E6916 /* bodybuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4A11BB1E1D5F29009E6916 /* bodybuilder.swift */; };
 		8D81BEEA1E1EB4EC009A54AD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D81BEE91E1EB4EB009A54AD /* CoreLocation.framework */; };
+		8D81BEEC1E1EE037009A54AD /* gym.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D81BEEB1E1EE037009A54AD /* gym.swift */; };
 		8DA97B081E1DD95A00565D2B /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA97B071E1DD95A00565D2B /* StatsViewController.swift */; };
 		8DA97B0C1E1DE6C200565D2B /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA97B0B1E1DE6C200565D2B /* ShopViewController.swift */; };
 		8DA97B0E1E1E52C800565D2B /* shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA97B0D1E1E52C800565D2B /* shop.swift */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		8D4A11BB1E1D5F29009E6916 /* bodybuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bodybuilder.swift; sourceTree = "<group>"; };
 		8D81BEE91E1EB4EB009A54AD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		8D81BEEB1E1EE037009A54AD /* gym.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gym.swift; sourceTree = "<group>"; };
 		8DA97B071E1DD95A00565D2B /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		8DA97B0B1E1DE6C200565D2B /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
 		8DA97B0D1E1E52C800565D2B /* shop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = shop.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				8DA97B071E1DD95A00565D2B /* StatsViewController.swift */,
 				8DA97B0B1E1DE6C200565D2B /* ShopViewController.swift */,
 				8DA97B0D1E1E52C800565D2B /* shop.swift */,
+				8D81BEEB1E1EE037009A54AD /* gym.swift */,
 			);
 			path = Bodybuilder;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				8DE983811E034377001BFC7A /* AppDelegate.swift in Sources */,
 				8DA97B0C1E1DE6C200565D2B /* ShopViewController.swift in Sources */,
 				8DA97B0E1E1E52C800565D2B /* shop.swift in Sources */,
+				8D81BEEC1E1EE037009A54AD /* gym.swift in Sources */,
 				8DA97B081E1DD95A00565D2B /* StatsViewController.swift in Sources */,
 				8D4A11BC1E1D5F29009E6916 /* bodybuilder.swift in Sources */,
 			);
