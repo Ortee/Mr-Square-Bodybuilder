@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66EE8FBF1E1F0DB70079B172 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 66EE8FBE1E1F0DB70079B172 /* Podfile */; };
 		8D4A11BC1E1D5F29009E6916 /* bodybuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4A11BB1E1D5F29009E6916 /* bodybuilder.swift */; };
 		8D81BEEA1E1EB4EC009A54AD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D81BEE91E1EB4EB009A54AD /* CoreLocation.framework */; };
 		8D81BEEC1E1EE037009A54AD /* gym.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D81BEEB1E1EE037009A54AD /* gym.swift */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		66EE8FBE1E1F0DB70079B172 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		8D4A11BB1E1D5F29009E6916 /* bodybuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bodybuilder.swift; sourceTree = "<group>"; };
 		8D81BEE91E1EB4EB009A54AD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		8D81BEEB1E1EE037009A54AD /* gym.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gym.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 		8DE983741E034376001BFC7A = {
 			isa = PBXGroup;
 			children = (
+				66EE8FBE1E1F0DB70079B172 /* Podfile */,
 				8DE9837F1E034377001BFC7A /* Bodybuilder */,
 				8DE983941E034377001BFC7A /* BodybuilderTests */,
 				8DE9839F1E034377001BFC7A /* BodybuilderUITests */,
@@ -258,6 +261,7 @@
 			files = (
 				8DE9838B1E034377001BFC7A /* LaunchScreen.storyboard in Resources */,
 				8DE983881E034377001BFC7A /* Assets.xcassets in Resources */,
+				66EE8FBF1E1F0DB70079B172 /* Podfile in Resources */,
 				8DE983861E034377001BFC7A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
