@@ -9,7 +9,7 @@
 import UIKit
 import GoogleMaps
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, GMSMapViewDelegate {
     
     var locationManager = CLLocationManager()
     var currentLocation: CLLocation?
@@ -32,6 +32,7 @@ class MapViewController: UIViewController {
         locationManager.distanceFilter = 50
         locationManager.startUpdatingLocation()
         locationManager.delegate = self
+        mapArea.delegate = self
         
         // Create a map.
         let defaultCamera: GMSCameraPosition = GMSCameraPosition.camera(withLatitude: defaultLocation.coordinate.latitude,
@@ -46,6 +47,17 @@ class MapViewController: UIViewController {
         view.addSubview(mapArea)
         mapArea.isHidden = true
     }
+    
+    func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
+        gymList.getNerbyGyms(latitude: mapArea.camera.target.latitude, longitude: mapArea.camera.target.longitude)
+        for gym in gymList.getGyms() {
+            print("Gym name: ", gym.getName())
+            let position = CLLocationCoordinate2D(latitude: gym.getLatitude(), longitude: gym.getLongitude())
+            let marker = GMSMarker(position: position)
+            marker.title = gym.getName()
+            marker.map = mapArea
+        }
+    }
 }
 
 // Delegates to handle events for the location manager.
@@ -59,10 +71,22 @@ extension MapViewController: CLLocationManagerDelegate {
         position.setPosition(_latitude: location.coordinate.latitude, _longitude: location.coordinate.longitude)
         latitudeLabel.text = String(position.getLatitude())
         longitudeLabel.text = String(position.getLongitude())
+        
+        gymList.getNerbyGyms(latitude: position.getLatitude(), longitude: position.getLongitude())
+        
 
         print("Latitude: \(position.getLatitude())")
         print("Longitude: \(position.getLongitude())")
-
+        print("GYMS LIST: \(gymList.getGyms())")
+        
+        for gym in gymList.getGyms() {
+            print("Gym name: ", gym.getName())
+            let position = CLLocationCoordinate2D(latitude: gym.getLatitude(), longitude: gym.getLongitude())
+            let marker = GMSMarker(position: position)
+            marker.title = gym.getName()
+            marker.map = mapArea
+        }
+        
         let currentLocation: GMSCameraPosition = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
                                                                           longitude: location.coordinate.longitude,
                                                                           zoom: zoomLevel)
@@ -75,6 +99,7 @@ extension MapViewController: CLLocationManagerDelegate {
         }
         
     }
+    
     
     // Handle authorization for the location manager.
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
