@@ -15,13 +15,15 @@ class MapViewController: UIViewController {
     var currentLocation: CLLocation?
     var zoomLevel: Float = 15.0
     @IBOutlet weak var mapArea: GMSMapView!
+    
+    @IBOutlet weak var latitudeLabel: UILabel!
+    @IBOutlet weak var longitudeLabel: UILabel!
+    
     // A default location to use when location permission is not granted.
-    let defaultLocation = CLLocation(latitude: -33.8523341, longitude: 151.2106085)
+    let defaultLocation = CLLocation(latitude: position.getLatitude(), longitude: position.getLongitude())
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("MAP AREA: ", mapArea)
         
         // Initialize the location manager.
         locationManager = CLLocationManager()
@@ -36,7 +38,6 @@ class MapViewController: UIViewController {
                                                                         longitude: defaultLocation.coordinate.longitude,
                                                                         zoom: zoomLevel)
         mapArea.camera = defaultCamera
-        
         mapArea.isMyLocationEnabled = true
         mapArea.settings.myLocationButton = true
         mapArea.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -55,6 +56,13 @@ extension MapViewController: CLLocationManagerDelegate {
         let location: CLLocation = locations.last!
         print("Location: \(location)")
         
+        position.setPosition(_latitude: location.coordinate.latitude, _longitude: location.coordinate.longitude)
+        latitudeLabel.text = String(position.getLatitude())
+        longitudeLabel.text = String(position.getLongitude())
+
+        print("Latitude: \(position.getLatitude())")
+        print("Longitude: \(position.getLongitude())")
+
         let currentLocation: GMSCameraPosition = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
                                                                           longitude: location.coordinate.longitude,
                                                                           zoom: zoomLevel)
