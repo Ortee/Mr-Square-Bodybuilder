@@ -20,6 +20,7 @@
 		8DE9838B1E034377001BFC7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE983891E034377001BFC7A /* LaunchScreen.storyboard */; };
 		8DE983961E034377001BFC7A /* BodybuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE983951E034377001BFC7A /* BodybuilderTests.swift */; };
 		8DE983A11E034377001BFC7A /* BodybuilderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE983A01E034377001BFC7A /* BodybuilderUITests.swift */; };
+		FDB9A54F4AD60ABE7D73E715 /* libPods-Bodybuilder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD9BA6F941656FBCABCCCB07 /* libPods-Bodybuilder.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		66EE8FBE1E1F0DB70079B172 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		57D213A8D2F297F341BE0270 /* Pods-Bodybuilder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bodybuilder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bodybuilder/Pods-Bodybuilder.debug.xcconfig"; sourceTree = "<group>"; };
+		66EE8FBE1E1F0DB70079B172 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		8D4A11BB1E1D5F29009E6916 /* bodybuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bodybuilder.swift; sourceTree = "<group>"; };
 		8D81BEE91E1EB4EB009A54AD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		8D81BEEB1E1EE037009A54AD /* gym.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gym.swift; sourceTree = "<group>"; };
@@ -59,6 +61,8 @@
 		8DE9839C1E034377001BFC7A /* BodybuilderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BodybuilderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DE983A01E034377001BFC7A /* BodybuilderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodybuilderUITests.swift; sourceTree = "<group>"; };
 		8DE983A21E034377001BFC7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E12EB7C4457208740C1CBCEF /* Pods-Bodybuilder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bodybuilder.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bodybuilder/Pods-Bodybuilder.release.xcconfig"; sourceTree = "<group>"; };
+		FD9BA6F941656FBCABCCCB07 /* libPods-Bodybuilder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Bodybuilder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +71,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D81BEEA1E1EB4EC009A54AD /* CoreLocation.framework in Frameworks */,
+				FDB9A54F4AD60ABE7D73E715 /* libPods-Bodybuilder.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,10 +92,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F1E8F1D39248289B4612B11 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				57D213A8D2F297F341BE0270 /* Pods-Bodybuilder.debug.xcconfig */,
+				E12EB7C4457208740C1CBCEF /* Pods-Bodybuilder.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		8D81BEE81E1EB4EB009A54AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				8D81BEE91E1EB4EB009A54AD /* CoreLocation.framework */,
+				FD9BA6F941656FBCABCCCB07 /* libPods-Bodybuilder.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -104,6 +119,7 @@
 				8DE9839F1E034377001BFC7A /* BodybuilderUITests */,
 				8DE9837E1E034377001BFC7A /* Products */,
 				8D81BEE81E1EB4EB009A54AD /* Frameworks */,
+				1F1E8F1D39248289B4612B11 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,9 +175,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8DE983A51E034377001BFC7A /* Build configuration list for PBXNativeTarget "Bodybuilder" */;
 			buildPhases = (
+				1839F936C4652390D84F31BC /* [CP] Check Pods Manifest.lock */,
 				8DE983791E034376001BFC7A /* Sources */,
 				8DE9837A1E034376001BFC7A /* Frameworks */,
 				8DE9837B1E034376001BFC7A /* Resources */,
+				6A9C12EDB1397AFD4E1623CE /* [CP] Embed Pods Frameworks */,
+				A53D8964CF05C8E369FA262E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -281,6 +300,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1839F936C4652390D84F31BC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6A9C12EDB1397AFD4E1623CE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bodybuilder/Pods-Bodybuilder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A53D8964CF05C8E369FA262E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Bodybuilder/Pods-Bodybuilder-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8DE983791E034376001BFC7A /* Sources */ = {
@@ -440,6 +507,7 @@
 		};
 		8DE983A61E034377001BFC7A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57D213A8D2F297F341BE0270 /* Pods-Bodybuilder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Bodybuilder/Info.plist;
@@ -452,6 +520,7 @@
 		};
 		8DE983A71E034377001BFC7A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E12EB7C4457208740C1CBCEF /* Pods-Bodybuilder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Bodybuilder/Info.plist;
