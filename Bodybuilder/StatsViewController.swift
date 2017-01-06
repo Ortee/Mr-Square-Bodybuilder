@@ -7,18 +7,11 @@
 //
 
 import UIKit
-import CoreLocation
 
-class StatsViewController: UIViewController, CLLocationManagerDelegate {
-    
-    var locationManager: CLLocationManager!
-    @IBOutlet var gpsX: UILabel!
-    @IBOutlet var gpsY: UILabel!
+class StatsViewController: UIViewController {
     
     func getNerbyGyms(latitude: Double, longitude: Double) {
-        
         let url = URL(string: "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=\(latitude),\(longitude)&radius=500&type=gym&keyword=silownia&key=AIzaSyDJo8nIHl3JbPGLmpyZbMA7PkQMZj_AeUw")
-        
         URLSession.shared.dataTask(with:url!, completionHandler: {(data, response, error) in
             guard let data = data, error == nil else { return }
             
@@ -46,10 +39,6 @@ class StatsViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        locationManager = CLLocationManager()
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        checkCoreLocationPermission()
     }
     
     override func didReceiveMemoryWarning() {
@@ -60,33 +49,4 @@ class StatsViewController: UIViewController, CLLocationManagerDelegate {
         getNerbyGyms(latitude: 52.4388894, longitude: 16.9184323)
         print("gymList", gymList.getGyms())
     }
-    
-    var location: CLLocation! {
-        didSet {
-            gpsX.text = String(location.coordinate.latitude)
-            gpsY.text = String(location.coordinate.longitude)
-        }
-    }
-    
-    func checkCoreLocationPermission() {
-        if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
-            locationManager.startUpdatingLocation()
-        } else if CLLocationManager.authorizationStatus() == .notDetermined {
-            locationManager.requestWhenInUseAuthorization()
-        } else if CLLocationManager.authorizationStatus() == .restricted {
-            print("UNAUTHORIZED GPS LOCALIZATION")
-        }
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        location = locations.last
-        locationManager.stopUpdatingLocation()
-        
-    }
-    
-    @IBAction func gpsUpdate(_ sender: AnyObject) {
-        locationManager.startUpdatingLocation()
-    }
-    
-    
 }
