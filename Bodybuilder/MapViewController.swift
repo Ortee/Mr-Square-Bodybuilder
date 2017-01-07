@@ -15,6 +15,8 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     var currentLocation: CLLocation?
     var zoomLevel: Float = 15.0
     @IBOutlet weak var mapArea: GMSMapView!
+    @IBOutlet weak var strengthLabel: UILabel!
+    @IBOutlet weak var gymStatus: UILabel!
     
     @IBOutlet weak var latitudeLabel: UILabel!
     @IBOutlet weak var longitudeLabel: UILabel!
@@ -62,7 +64,10 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
 
 // Delegates to handle events for the location manager.
 extension MapViewController: CLLocationManagerDelegate {
-    
+    func onTheGymAction() {
+        bodybuilder.increaseStrength()
+        strengthLabel.text = String(bodybuilder.getStrength())
+    }
     // Handle incoming location events.
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location: CLLocation = locations.last!
@@ -72,12 +77,20 @@ extension MapViewController: CLLocationManagerDelegate {
         latitudeLabel.text = String(position.getLatitude())
         longitudeLabel.text = String(position.getLongitude())
         
+        // get Nerby Gyms
         gymList.getNerbyGyms(latitude: position.getLatitude(), longitude: position.getLongitude())
+        // check bodybuilder is near gym
+        let isNerarGym: Bool = bodybuilder.checkBodybuilderIsOnGym(_gymlist: gymList.getGyms(), _latitude: position.getLatitude(), _longitude: position.getLongitude())
+        var timer = Timer()
         
-
-        print("Latitude: \(position.getLatitude())")
-        print("Longitude: \(position.getLongitude())")
-        print("GYMS LIST: \(gymList.getGyms())")
+        if(isNerarGym) {
+            timer.invalidate()
+            gymStatus.text = "You are on the gym now."
+            timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(onTheGymAction), userInfo: nil, repeats: true)
+        } else {
+            timer.invalidate()
+            gymStatus.text = "You aren't on the gym now."
+        }
         
         for gym in gymList.getGyms() {
             print("Gym name: ", gym.getName())

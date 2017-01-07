@@ -10,32 +10,26 @@ import Foundation
 
 class Bodybuilder {
     var strength: Int = 0
-    var hunger: Int = 0;
-    var cash: Int = 0;
-    
-    // incrase step
-    var strengthIncreaseValue = 1;
-    var cashIncreaseValue = 1;
-    var hungerIncreaseValue = 1;
-
+    var strengthIncreaseValue = 1
+    let CIRCLE_MAX_RADIUS: Double = 0.002
     
     init() {
         print("BODYBUILDER INIT")
     }
     
+    func checkBodybuilderIsOnGym(_gymlist: [Gym], _latitude: Double, _longitude: Double) -> Bool {
+        for gym in _gymlist {
+            if((Swift.abs(gym.getLatitude() - _latitude) < CIRCLE_MAX_RADIUS ) && ( Swift.abs(gym.getLongitude() - _longitude) < CIRCLE_MAX_RADIUS)) {
+                return true
+            }
+        }
+        return false
+    }
+    
+    
     func boostStrength(step: Int) {
         print("BOOST STRENGTH STEP: ", step)
         strength += step
-    }
-    
-    func boostHunger(step: Int) {
-        print("HUNGER STRENGTH STEP: ", step)
-        hunger += step
-    }
-    
-    func boostCash(step: Int) {
-        print("CASH STRENGTH STEP: ", step)
-        cash += step
     }
     
     func increaseStrength() {
@@ -43,30 +37,9 @@ class Bodybuilder {
         strength += strengthIncreaseValue
     }
     
-    func increaseHunger() {
-        print("INCREASE HUNGER")
-        hunger += hungerIncreaseValue
-    }
-    
-    func increaseCash() {
-        print("INCREASE CASH")
-        cash += cashIncreaseValue
-    }
-    
-    
     func getStrength() -> Int{
         print("RETURN STRENGTH")
         return strength
-    }
-    
-    func getHunger() -> Int {
-        print("RETURN HUNGER")
-        return hunger
-    }
-    
-    func getCash() -> Int {
-        print("RETURN CASH")
-        return cash
     }
     
     func getStrengthIncreaseValue() -> Int {
@@ -74,29 +47,9 @@ class Bodybuilder {
         return strengthIncreaseValue;
     }
     
-    func getHungerIncreaseValue() -> Int {
-        print("RETURN Hunger Increase Value")
-        return hungerIncreaseValue;
-    }
-    
-    func getCashIncreaseValue() -> Int {
-        print("RETURN Cash Increase Value")
-        return cashIncreaseValue;
-    }
-    
     func boostStrengthIncreaseValue(step: Int) {
         print("BOOST Strength Increase Value: ", step )
         strengthIncreaseValue += step
-    }
-    
-    func boostHungerIncreaseValue(step: Int) {
-        print("BOOST Hunger Increase Value: ", step )
-        hungerIncreaseValue += step;
-    }
-    
-    func boostCashIncreaseValue(step: Int) {
-        print("BOOST Cash Increase Value: ", step )
-        cashIncreaseValue += step;
     }
 }
 
