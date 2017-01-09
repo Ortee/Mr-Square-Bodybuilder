@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		663E59C51E24256900BE63F6 /* style.json in Resources */ = {isa = PBXBuildFile; fileRef = 663E59C41E24256900BE63F6 /* style.json */; };
 		667B9FF71E1F17F4006EFAD2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667B9FF61E1F17F4006EFAD2 /* MapViewController.swift */; };
 		667B9FF91E1F1E98006EFAD2 /* position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667B9FF81E1F1E98006EFAD2 /* position.swift */; };
 		66EE8FBF1E1F0DB70079B172 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 66EE8FBE1E1F0DB70079B172 /* Podfile */; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		57D213A8D2F297F341BE0270 /* Pods-Bodybuilder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bodybuilder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bodybuilder/Pods-Bodybuilder.debug.xcconfig"; sourceTree = "<group>"; };
+		663E59C41E24256900BE63F6 /* style.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = style.json; sourceTree = "<group>"; };
 		667B9FF61E1F17F4006EFAD2 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		667B9FF81E1F1E98006EFAD2 /* position.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = position.swift; sourceTree = "<group>"; };
 		66EE8FBE1E1F0DB70079B172 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -105,6 +107,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		663E59C31E24253700BE63F6 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				663E59C41E24256900BE63F6 /* style.json */,
+			);
+			name = assets;
+			sourceTree = "<group>";
+		};
 		8D81BEE81E1EB4EB009A54AD /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +127,7 @@
 		8DE983741E034376001BFC7A = {
 			isa = PBXGroup;
 			children = (
+				663E59C31E24253700BE63F6 /* assets */,
 				66EE8FBE1E1F0DB70079B172 /* Podfile */,
 				8DE9837F1E034377001BFC7A /* Bodybuilder */,
 				8DE983941E034377001BFC7A /* BodybuilderTests */,
@@ -287,6 +298,7 @@
 				8DE9838B1E034377001BFC7A /* LaunchScreen.storyboard in Resources */,
 				8DE983881E034377001BFC7A /* Assets.xcassets in Resources */,
 				66EE8FBF1E1F0DB70079B172 /* Podfile in Resources */,
+				663E59C51E24256900BE63F6 /* style.json in Resources */,
 				8DE983861E034377001BFC7A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

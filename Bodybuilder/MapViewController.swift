@@ -44,6 +44,17 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         mapArea.isMyLocationEnabled = true
         mapArea.settings.myLocationButton = true
         mapArea.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+
+        // map style
+        do {
+            if let styleURL = Bundle.main.url(forResource: "style", withExtension: "json") {
+                mapArea.mapStyle = try GMSMapStyle(contentsOfFileURL: styleURL)
+            } else {
+                NSLog("Unable to find style.json")
+            }
+        } catch {
+            NSLog("One or more of the map styles failed to load. \(error)")
+        }
         
         // Add the map to the view, hide it until we've got a location update.
         view.addSubview(mapArea)
