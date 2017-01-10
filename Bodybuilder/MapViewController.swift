@@ -67,6 +67,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
             print("Gym name: ", gym.getName())
             let position = CLLocationCoordinate2D(latitude: gym.getLatitude(), longitude: gym.getLongitude())
             let marker = GMSMarker(position: position)
+            marker.icon = UIImage(named: "gym-marker")
             marker.title = gym.getName()
             marker.map = mapArea
         }
