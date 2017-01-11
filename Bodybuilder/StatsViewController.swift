@@ -10,6 +10,11 @@ import UIKit
 
 class StatsViewController: UIViewController {
     
+    @IBOutlet weak var StrengthLabel: UILabel!
+    @IBOutlet weak var CashLabel: UILabel!
+    @IBOutlet weak var EnergyLabel: UILabel!
+    @IBOutlet weak var StrengthPerMinute: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -18,7 +23,11 @@ class StatsViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func getGymsButton(_ sender: AnyObject) {
-        print("gymList", gymList.getGyms())
+    @IBAction func refreshButton(_ sender: Any) {
+        StrengthLabel.text = String(bodybuilder.getStrength())
+        CashLabel.text = "\(String(format: "%.2f", bodybuilder.getCash()))$"
+        StrengthPerMinute.text = String(bodybuilder.getStrengthIncreaseValue())
+        EnergyLabel.text = "\(String(bodybuilder.getEnergy()))%"
     }
+    
 }

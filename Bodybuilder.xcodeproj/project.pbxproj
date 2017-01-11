@@ -12,11 +12,11 @@
 		66EE8FBF1E1F0DB70079B172 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 66EE8FBE1E1F0DB70079B172 /* Podfile */; };
 		66F44E791E24E14200F5E290 /* style.json in Resources */ = {isa = PBXBuildFile; fileRef = 66F44E781E24E14200F5E290 /* style.json */; };
 		8D4A11BC1E1D5F29009E6916 /* bodybuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4A11BB1E1D5F29009E6916 /* bodybuilder.swift */; };
+		8D5EE7C91E26C87500EAA6F1 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5EE7C81E26C87500EAA6F1 /* GameController.swift */; };
 		8D81BEEA1E1EB4EC009A54AD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D81BEE91E1EB4EB009A54AD /* CoreLocation.framework */; };
 		8D81BEEC1E1EE037009A54AD /* gym.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D81BEEB1E1EE037009A54AD /* gym.swift */; };
 		8DA97B081E1DD95A00565D2B /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA97B071E1DD95A00565D2B /* StatsViewController.swift */; };
 		8DA97B0C1E1DE6C200565D2B /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA97B0B1E1DE6C200565D2B /* ShopViewController.swift */; };
-		8DA97B0E1E1E52C800565D2B /* shop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA97B0D1E1E52C800565D2B /* shop.swift */; };
 		8DE983811E034377001BFC7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE983801E034377001BFC7A /* AppDelegate.swift */; };
 		8DE983861E034377001BFC7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE983841E034377001BFC7A /* Main.storyboard */; };
 		8DE983881E034377001BFC7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DE983871E034377001BFC7A /* Assets.xcassets */; };
@@ -50,11 +50,11 @@
 		66EE8FBE1E1F0DB70079B172 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		66F44E781E24E14200F5E290 /* style.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = style.json; sourceTree = "<group>"; };
 		8D4A11BB1E1D5F29009E6916 /* bodybuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bodybuilder.swift; sourceTree = "<group>"; };
+		8D5EE7C81E26C87500EAA6F1 /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		8D81BEE91E1EB4EB009A54AD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		8D81BEEB1E1EE037009A54AD /* gym.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gym.swift; sourceTree = "<group>"; };
 		8DA97B071E1DD95A00565D2B /* StatsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
 		8DA97B0B1E1DE6C200565D2B /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShopViewController.swift; sourceTree = "<group>"; };
-		8DA97B0D1E1E52C800565D2B /* shop.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = shop.swift; sourceTree = "<group>"; };
 		8DE9837D1E034377001BFC7A /* Bodybuilder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bodybuilder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DE983801E034377001BFC7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DE983851E034377001BFC7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -159,10 +159,10 @@
 				8D4A11BB1E1D5F29009E6916 /* bodybuilder.swift */,
 				8DA97B071E1DD95A00565D2B /* StatsViewController.swift */,
 				8DA97B0B1E1DE6C200565D2B /* ShopViewController.swift */,
-				8DA97B0D1E1E52C800565D2B /* shop.swift */,
 				8D81BEEB1E1EE037009A54AD /* gym.swift */,
 				667B9FF61E1F17F4006EFAD2 /* MapViewController.swift */,
 				667B9FF81E1F1E98006EFAD2 /* position.swift */,
+				8D5EE7C81E26C87500EAA6F1 /* GameController.swift */,
 			);
 			path = Bodybuilder;
 			sourceTree = "<group>";
@@ -251,11 +251,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = BatoregoTeam;
 				TargetAttributes = {
 					8DE9837C1E034376001BFC7A = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = Q8V5KS3X26;
 						ProvisioningStyle = Automatic;
 					};
 					8DE983901E034377001BFC7A = {
@@ -374,8 +375,8 @@
 			files = (
 				8DE983811E034377001BFC7A /* AppDelegate.swift in Sources */,
 				8DA97B0C1E1DE6C200565D2B /* ShopViewController.swift in Sources */,
-				8DA97B0E1E1E52C800565D2B /* shop.swift in Sources */,
 				8D81BEEC1E1EE037009A54AD /* gym.swift in Sources */,
+				8D5EE7C91E26C87500EAA6F1 /* GameController.swift in Sources */,
 				8DA97B081E1DD95A00565D2B /* StatsViewController.swift in Sources */,
 				8D4A11BC1E1D5F29009E6916 /* bodybuilder.swift in Sources */,
 				667B9FF91E1F1E98006EFAD2 /* position.swift in Sources */,
@@ -452,6 +453,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -501,6 +503,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -530,11 +533,15 @@
 			baseConfigurationReference = 57D213A8D2F297F341BE0270 /* Pods-Bodybuilder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = Q8V5KS3X26;
 				INFOPLIST_FILE = Bodybuilder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = BatoregoTeam.Bodybuilder;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mateusz.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -543,11 +550,15 @@
 			baseConfigurationReference = E12EB7C4457208740C1CBCEF /* Pods-Bodybuilder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = Q8V5KS3X26;
 				INFOPLIST_FILE = Bodybuilder/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = BatoregoTeam.Bodybuilder;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mateusz.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

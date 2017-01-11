@@ -11,7 +11,10 @@ import Foundation
 class Bodybuilder {
     var strength: Int = 0
     var strengthIncreaseValue = 1
+    var cashIncreaseValue: Float = 0.01
     let CIRCLE_MAX_RADIUS: Double = 0.002
+    var cash: Float = 0.00
+    var energy: Int = 100
     
     init() {
         print("BODYBUILDER INIT")
@@ -26,31 +29,56 @@ class Bodybuilder {
         return false
     }
     
+    //STRENGTH
     
     func boostStrength(step: Int) {
-        print("BOOST STRENGTH STEP: ", step)
         strength += step
     }
     
     func increaseStrength() {
-        print("INCREASE STRENGTH")
         strength += strengthIncreaseValue
     }
     
     func getStrength() -> Int{
-        print("RETURN STRENGTH")
         return strength
     }
     
+    
     func getStrengthIncreaseValue() -> Int {
-        print("RETURN Strength Increase Value")
         return strengthIncreaseValue;
     }
     
     func boostStrengthIncreaseValue(step: Int) {
-        print("BOOST Strength Increase Value: ", step )
         strengthIncreaseValue += step
     }
+    
+    //CASH
+    
+    func getCash()-> Float {
+        return cash
+    }
+    
+    func increaseCash(){
+        cash += cashIncreaseValue
+    }
+    
+    func buyItem(price: Float, strengthBoost: Int) {
+        if(cash >= price) {
+            cash -= price
+            strengthIncreaseValue += strengthBoost
+        }
+    }
+    
+    //ENERGY
+    
+    func getEnergy() -> Int {
+        return energy
+    }
+    
+    func decreaseEnergy() {
+        energy -= 1
+    }
+    
 }
 
 var bodybuilder: Bodybuilder = Bodybuilder()

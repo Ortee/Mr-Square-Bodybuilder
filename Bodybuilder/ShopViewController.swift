@@ -18,4 +18,11 @@ class ShopeViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    @IBAction func riceButton(_ sender: Any) {
+        bodybuilder.buyItem(price: 1.00, strengthBoost: 10)
+    }
+    
+    @IBAction func steroidsButton(_ sender: Any) {
+        bodybuilder.buyItem(price: 2.00, strengthBoost: 50)
+    }
 }
