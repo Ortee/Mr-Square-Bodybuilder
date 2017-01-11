@@ -98,7 +98,7 @@ extension MapViewController: CLLocationManagerDelegate {
         if(isNerarGym) {
             timer.invalidate()
             gymStatus.text = "You are on the gym now."
-            timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(onTheGymAction), userInfo: nil, repeats: true)
+            timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(onTheGymAction), userInfo: nil, repeats: true)
         } else {
             timer.invalidate()
             gymStatus.text = "You aren't on the gym now."

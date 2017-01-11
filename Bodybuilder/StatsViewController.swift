@@ -14,6 +14,7 @@ class StatsViewController: UIViewController {
     @IBOutlet weak var CashLabel: UILabel!
     @IBOutlet weak var EnergyLabel: UILabel!
     @IBOutlet weak var StrengthPerMinute: UILabel!
+    @IBOutlet weak var energyBar: UIProgressView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,11 +24,14 @@ class StatsViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func refreshButton(_ sender: Any) {
+    override func viewDidAppear(_ animated: Bool) {
         StrengthLabel.text = String(bodybuilder.getStrength())
         CashLabel.text = "\(String(format: "%.2f", bodybuilder.getCash()))$"
         StrengthPerMinute.text = String(bodybuilder.getStrengthIncreaseValue())
         EnergyLabel.text = "\(String(bodybuilder.getEnergy()))%"
+        energyBar.setProgress(_ progress: 0.1,
+                              animated: true)
+
     }
     
 }

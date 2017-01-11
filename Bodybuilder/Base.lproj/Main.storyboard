@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--MAIN-->
+        <!--Stats-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="StatsViewController" customModule="Bodybuilder" sceneMemberID="viewController">
@@ -25,18 +25,6 @@
                                 <rect key="frame" x="0.0" y="66" width="359" height="248"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ASx-ww-Sbh">
-                                <rect key="frame" x="16" y="560" width="343" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <state key="normal" title="REFRESH">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="refreshButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kH4-UC-YcO"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Strength:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SU3-Mt-1xi">
                                 <rect key="frame" x="16" y="322" width="185" height="53"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -93,10 +81,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="Vhs-6l-f9P">
+                                <rect key="frame" x="16" y="582" width="343" height="2"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </progressView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="MAIN" id="6Zw-MC-klj"/>
+                    <tabBarItem key="tabBarItem" title="Stats" id="6Zw-MC-klj"/>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -104,12 +96,13 @@
                         <outlet property="EnergyLabel" destination="GGw-g7-Y0o" id="qdv-sX-3wt"/>
                         <outlet property="StrengthLabel" destination="BgN-zw-2nI" id="vTJ-ae-ixk"/>
                         <outlet property="StrengthPerMinute" destination="bXz-PH-Wdf" id="AgI-mm-EFp"/>
+                        <outlet property="energyBar" destination="Vhs-6l-f9P" id="jV9-t3-wVI"/>
                         <outlet property="strengthLabel" destination="BgN-zw-2nI" id="X2K-Fw-810"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1109.5999999999999" y="131.78410794602701"/>
+            <point key="canvasLocation" x="936.79999999999995" y="109.29535232383809"/>
         </scene>
         <!--Map-->
         <scene sceneID="KUR-Ze-igT">
@@ -177,7 +170,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O0n-Bo-KGy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1110" y="901"/>
+            <point key="canvasLocation" x="937" y="870"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="SFn-YW-bFQ">
@@ -243,7 +236,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YQz-Gd-FyY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1109.5999999999999" y="-545.57721139430294"/>
+            <point key="canvasLocation" x="937" y="-588"/>
         </scene>
         <!--Game-->
         <scene sceneID="Nav-yX-l8r">
@@ -258,7 +251,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="05F-Jk-VNF">
-                                <rect key="frame" x="16" y="236" width="343" height="107"/>
+                                <rect key="frame" x="16" y="232" width="343" height="281"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="58"/>
@@ -270,7 +263,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.00$" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSH-bs-XZr">
-                                <rect key="frame" x="16" y="545" width="343" height="70"/>
+                                <rect key="frame" x="16" y="98" width="343" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <nil key="textColor"/>
@@ -289,7 +282,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c2w-Y4-7kS" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="900.89955022488766"/>
+            <point key="canvasLocation" x="136.80000000000001" y="868.51574212893559"/>
         </scene>
     </scenes>
     <resources>
