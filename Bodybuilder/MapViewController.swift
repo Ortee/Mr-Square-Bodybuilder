@@ -18,8 +18,6 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     @IBOutlet weak var strengthLabel: UILabel!
     @IBOutlet weak var gymStatus: UILabel!
     
-    @IBOutlet weak var latitudeLabel: UILabel!
-    @IBOutlet weak var longitudeLabel: UILabel!
     
     // A default location to use when location permission is not granted.
     let defaultLocation = CLLocation(latitude: position.getLatitude(), longitude: position.getLongitude())
@@ -86,8 +84,8 @@ extension MapViewController: CLLocationManagerDelegate {
         print("Location: \(location)")
         
         position.setPosition(_latitude: location.coordinate.latitude, _longitude: location.coordinate.longitude)
-        latitudeLabel.text = String(position.getLatitude())
-        longitudeLabel.text = String(position.getLongitude())
+//        latitudeLabel.text = String(position.getLatitude())
+//        longitudeLabel.text = String(position.getLongitude())
         
         // get Nerby Gyms
         gymList.getNerbyGyms(latitude: position.getLatitude(), longitude: position.getLongitude())
