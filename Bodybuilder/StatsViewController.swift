@@ -10,11 +10,11 @@ import UIKit
 
 class StatsViewController: UIViewController {
     
-    @IBOutlet weak var StrengthLabel: UILabel!
+    @IBOutlet weak var ExpLabel: UILabel!
     @IBOutlet weak var CashLabel: UILabel!
     @IBOutlet weak var EnergyLabel: UILabel!
-    @IBOutlet weak var StrengthPerMinute: UILabel!
-    @IBOutlet weak var energyBar: UIProgressView!
+    @IBOutlet weak var ExpPerMinute: UILabel!
+    @IBOutlet weak var LevelLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,13 +25,11 @@ class StatsViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        StrengthLabel.text = String(bodybuilder.getStrength())
+        ExpLabel.text = String(bodybuilder.getExperience())
         CashLabel.text = "\(String(format: "%.2f", bodybuilder.getCash()))$"
-        StrengthPerMinute.text = String(bodybuilder.getStrengthIncreaseValue())
+        ExpPerMinute.text = String(bodybuilder.getExperienceIncreaseValue())
         EnergyLabel.text = "\(String(bodybuilder.getEnergy()))%"
-        energyBar.setProgress(_ progress: 0.1,
-                              animated: true)
-
+        LevelLabel.text = String(bodybuilder.getLeveL())
     }
     
 }

@@ -25,5 +25,4 @@ class GameController: UIViewController {
         cashLabel.text = "\(String(format: "%.2f", bodybuilder.getCash()))$"
     }
 
-
 }

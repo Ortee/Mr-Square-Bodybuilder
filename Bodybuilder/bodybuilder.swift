@@ -9,12 +9,13 @@
 import Foundation
 
 class Bodybuilder {
-    var strength: Int = 0
-    var strengthIncreaseValue = 1
+    var experience: Int = 0
+    var experienceIncreaseValue = 1
     var cashIncreaseValue: Float = 0.01
     let CIRCLE_MAX_RADIUS: Double = 0.002
     var cash: Float = 0.00
     var energy: Int = 100
+    var level: Int = 1
     
     init() {
         print("BODYBUILDER INIT")
@@ -28,28 +29,46 @@ class Bodybuilder {
         }
         return false
     }
+
+    //LEVEL
     
-    //STRENGTH
-    
-    func boostStrength(step: Int) {
-        strength += step
-    }
-    
-    func increaseStrength() {
-        strength += strengthIncreaseValue
-    }
-    
-    func getStrength() -> Int{
-        return strength
+    func getLeveL() -> Int {
+        return level
     }
     
     
-    func getStrengthIncreaseValue() -> Int {
-        return strengthIncreaseValue;
+    func getExperienceForLevel(_level: Int) -> Int {
+        return ((50 * _level * _level * _level) - (150 * _level * _level) + (400 * _level)) / 3
+    }
+
+    
+    //EXPERIENCE
+    
+    func boostExperienceStep(step: Int) {
+        experience += step
     }
     
-    func boostStrengthIncreaseValue(step: Int) {
-        strengthIncreaseValue += step
+    func increaseExperiencePerSecond() {
+        let nextLevelExp = getExperienceForLevel(_level: level + 1)
+        print("NEXT LEVEL:", nextLevelExp)
+        print("EXPL:", experience)
+        if (experience >= nextLevelExp){
+            level += 1
+        }
+        experience += experienceIncreaseValue
+    }
+    
+    func getExperience() -> Int{
+        return experience
+    }
+    
+    
+    func getExperienceIncreaseValue() -> Int {
+        return experienceIncreaseValue;
+    }
+    
+    func boostExperienceIncreaseValue(step: Int) {
+        experienceIncreaseValue += step
     }
     
     //CASH
@@ -65,7 +84,7 @@ class Bodybuilder {
     func buyItem(price: Float, strengthBoost: Int) {
         if(cash >= price) {
             cash -= price
-            strengthIncreaseValue += strengthBoost
+            experienceIncreaseValue += strengthBoost
         }
     }
     

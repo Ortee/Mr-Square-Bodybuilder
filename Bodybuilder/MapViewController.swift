@@ -77,8 +77,8 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
 // Delegates to handle events for the location manager.
 extension MapViewController: CLLocationManagerDelegate {
     func onTheGymAction() {
-        bodybuilder.increaseStrength()
-        strengthLabel.text = String(bodybuilder.getStrength())
+        bodybuilder.increaseExperiencePerSecond()
+        strengthLabel.text = String(bodybuilder.getExperience())
     }
     // Handle incoming location events.
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
