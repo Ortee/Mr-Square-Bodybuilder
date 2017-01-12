@@ -40,6 +40,13 @@ class Bodybuilder {
     func getExperienceForLevel(_level: Int) -> Int {
         return ((50 * _level * _level * _level) - (150 * _level * _level) + (400 * _level)) / 3
     }
+    
+    func getPercentExperienceToBar() -> Float {
+        if(level>1){
+            return ( Float(experience - getExperienceForLevel(_level: level)) / Float(getExperienceForLevel(_level: level + 1) - getExperienceForLevel(_level: level)))
+        }
+        return ( Float(experience) / Float(getExperienceForLevel(_level: level + 1)) )
+    }
 
     
     //EXPERIENCE
@@ -94,8 +101,12 @@ class Bodybuilder {
         return energy
     }
     
-    func decreaseEnergy() {
+    func consumptionEnergy() {
         energy -= 1
+    }
+    
+    func reconditioningEnergy() {
+        energy += 1
     }
     
 }
