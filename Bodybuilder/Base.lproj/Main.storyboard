@@ -17,7 +17,7 @@
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleAspectFit" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -106,7 +106,7 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bb-red" translatesAutoresizingMaskIntoConstraints="NO" id="6ky-hV-4XY">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1_happy" translatesAutoresizingMaskIntoConstraints="NO" id="6ky-hV-4XY">
                                 <rect key="frame" x="0.0" y="189" width="375" height="259"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -121,6 +121,7 @@
                         <outlet property="EnergyLabel" destination="GGw-g7-Y0o" id="qdv-sX-3wt"/>
                         <outlet property="ExperiencePercentLabel" destination="bYT-Ht-XDv" id="Tek-tm-3cU"/>
                         <outlet property="LevelLabel" destination="O1q-8b-oNt" id="DLJ-1z-S5I"/>
+                        <outlet property="bodybuilderImage" destination="6ky-hV-4XY" id="U7F-x1-ad3"/>
                         <outlet property="energyPercentLabel" destination="GGw-g7-Y0o" id="arA-7t-VX1"/>
                         <outlet property="experienceBar" destination="Ifv-js-rdf" id="6l0-Mg-mg3"/>
                     </connections>
@@ -288,7 +289,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="05F-Jk-VNF">
                                 <rect key="frame" x="23" y="204" width="329" height="274"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="CLICK" image="coin">
+                                <state key="normal" image="bodybuilder-coin">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -344,7 +345,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="bb-red" width="640" height="400"/>
-        <image name="coin" width="1368" height="1358"/>
+        <image name="1_happy" width="298" height="326"/>
+        <image name="bodybuilder-coin" width="256" height="256"/>
     </resources>
 </document>

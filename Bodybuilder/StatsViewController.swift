@@ -10,6 +10,7 @@ import UIKit
 
 class StatsViewController: UIViewController {
     
+    @IBOutlet weak var bodybuilderImage: UIImageView!
     @IBOutlet weak var ExperiencePercentLabel: UILabel!
     @IBOutlet weak var EnergyLabel: UILabel!
     @IBOutlet weak var LevelLabel: UILabel!
@@ -34,6 +35,8 @@ class StatsViewController: UIViewController {
         ExperiencePercentLabel.text = "\(Int(bodybuilder.getPercentExperienceToBar()*100))%"
         energyPercentLabel.text = "\(String(bodybuilder.getEnergy()))%"
         EnergyBar.progress = Float(bodybuilder.getEnergy())/100
+        
+        bodybuilderImage.image = UIImage(named: "\(String(bodybuilder.getImageLevel()))_\(bodybuilder.getImageMood()).png")
     }
     
 }

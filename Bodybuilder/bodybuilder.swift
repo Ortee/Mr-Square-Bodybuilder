@@ -16,6 +16,7 @@ class Bodybuilder {
     var cash: Float = 0.00
     var energy: Int = 100
     var level: Int = 1
+    var isSad: Bool = false;
     
     init() {
         print("BODYBUILDER INIT")
@@ -46,6 +47,20 @@ class Bodybuilder {
             return ( Float(experience - getExperienceForLevel(_level: level)) / Float(getExperienceForLevel(_level: level + 1) - getExperienceForLevel(_level: level)))
         }
         return ( Float(experience) / Float(getExperienceForLevel(_level: level + 1)) )
+    }
+    
+    func getImageLevel() -> Int {
+        if(level/5<1){
+            return 1
+        }
+        return (level/5)+1
+    }
+    
+    func getImageMood() -> String {
+        if(isSad) {
+            return "sad"
+        }
+        return "happy"
     }
 
     
