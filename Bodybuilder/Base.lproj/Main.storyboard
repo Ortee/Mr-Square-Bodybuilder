@@ -182,11 +182,19 @@
                                 <color key="textColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="0.20392156859999999" green="0.28627450980000002" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CORDS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBd-8J-p0L">
+                                <rect key="frame" x="16" y="152" width="343" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" id="33M-fK-xOe"/>
                     <connections>
+                        <outlet property="gymLabel" destination="fBd-8J-p0L" id="zPe-vb-gQO"/>
                         <outlet property="gymStatus" destination="ntn-DW-GPn" id="Jpf-JG-Qch"/>
                         <outlet property="mapArea" destination="ggQ-PT-O1x" id="DtF-Me-u5w"/>
                         <outlet property="strengthLabel" destination="cPr-yD-IKh" id="fNG-eU-K5i"/>

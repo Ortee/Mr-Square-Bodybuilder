@@ -17,10 +17,11 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     @IBOutlet weak var mapArea: GMSMapView!
     @IBOutlet weak var strengthLabel: UILabel!
     @IBOutlet weak var gymStatus: UILabel!
-    
+    @IBOutlet weak var gymLabel: UILabel!
     
     // A default location to use when location permission is not granted.
     let defaultLocation = CLLocation(latitude: position.getLatitude(), longitude: position.getLongitude())
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         locationManager.delegate = self
         mapArea.delegate = self
         
+        
         // Create a map.
         let defaultCamera: GMSCameraPosition = GMSCameraPosition.camera(withLatitude: defaultLocation.coordinate.latitude,
                                                                         longitude: defaultLocation.coordinate.longitude,
@@ -42,7 +44,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         mapArea.isMyLocationEnabled = true
         mapArea.settings.myLocationButton = true
         mapArea.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-
+        
         // map style
         do {
             if let styleURL = Bundle.main.url(forResource: "style", withExtension: "json") {
@@ -59,61 +61,64 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
         mapArea.isHidden = true
     }
     
-    func mapView(_ mapView: GMSMapView, idleAt position: GMSCameraPosition) {
-        gymList.getNerbyGyms(latitude: mapArea.camera.target.latitude, longitude: mapArea.camera.target.longitude)
-        for gym in gymList.getGyms() {
-            print("Gym name: ", gym.getName())
-            let position = CLLocationCoordinate2D(latitude: gym.getLatitude(), longitude: gym.getLongitude())
-            let marker = GMSMarker(position: position)
-            marker.icon = UIImage(named: "gym-marker")
-            marker.title = gym.getName()
-            marker.map = mapArea
-        }
-    }
 }
 
+var queueTimer = Timer()
+var timer = Timer()
 // Delegates to handle events for the location manager.
 extension MapViewController: CLLocationManagerDelegate {
     func onTheGymAction() {
         bodybuilder.increaseExperiencePerSecond()
         strengthLabel.text = String(bodybuilder.getExperience())
     }
+    
+    func test() {
+        if gymList.getGyms().count > 0 {
+            queueTimer.invalidate()
+            print("GYMS FOUND: \(gymList.getGyms().count)")
+            for gym in gymList.getGyms() {
+                print("Gym name: ", gym.getName())
+                let position = CLLocationCoordinate2D(latitude: gym.getLatitude(), longitude: gym.getLongitude())
+                let marker = GMSMarker(position: position)
+                marker.icon = UIImage(named: "gym-marker")
+                marker.title = gym.getName()
+                marker.map = mapArea
+            }
+            // check bodybuilder is near gym
+            let isNerarGym: Bool = bodybuilder.checkBodybuilderIsOnGym(_gymlist: gymList.getGyms(), _latitude: position.getLatitude(), _longitude: position.getLongitude())
+            
+            if(isNerarGym) {
+                timer.invalidate()
+                gymStatus.text = "You are on the gym now."
+                timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(onTheGymAction), userInfo: nil, repeats: true)
+            } else {
+                timer.invalidate()
+                gymStatus.text = "You aren't on the gym now."
+            }
+            print("GYMY HERE")
+        } else {
+            print("GYMOW BRAK")
+        }
+    }
+    
     // Handle incoming location events.
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location: CLLocation = locations.last!
-        print("Location: \(location)")
+        print("Location: \(location.coordinate.latitude) \(location.coordinate.longitude)")
+        gymLabel.text = "\(location.coordinate.latitude) | \(location.coordinate.longitude)"
         
         position.setPosition(_latitude: location.coordinate.latitude, _longitude: location.coordinate.longitude)
-//        latitudeLabel.text = String(position.getLatitude())
-//        longitudeLabel.text = String(position.getLongitude())
+        
+        
+        queueTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(test), userInfo: nil, repeats: true)
         
         // get Nerby Gyms
         gymList.getNerbyGyms(latitude: position.getLatitude(), longitude: position.getLongitude())
-        // check bodybuilder is near gym
-        let isNerarGym: Bool = bodybuilder.checkBodybuilderIsOnGym(_gymlist: gymList.getGyms(), _latitude: position.getLatitude(), _longitude: position.getLongitude())
-        var timer = Timer()
-        
-        if(isNerarGym) {
-            timer.invalidate()
-            gymStatus.text = "You are on the gym now."
-            timer = Timer.scheduledTimer(timeInterval: 60, target: self, selector: #selector(onTheGymAction), userInfo: nil, repeats: true)
-        } else {
-            timer.invalidate()
-            gymStatus.text = "You aren't on the gym now."
-        }
-        
-        for gym in gymList.getGyms() {
-            print("Gym name: ", gym.getName())
-            let position = CLLocationCoordinate2D(latitude: gym.getLatitude(), longitude: gym.getLongitude())
-            let marker = GMSMarker(position: position)
-            marker.title = gym.getName()
-            marker.map = mapArea
-        }
+        //        timer.invalidate()
         
         let currentLocation: GMSCameraPosition = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
                                                                           longitude: location.coordinate.longitude,
                                                                           zoom: zoomLevel)
-        
         if mapArea.isHidden {
             mapArea.isHidden = false
             mapArea.camera = currentLocation
