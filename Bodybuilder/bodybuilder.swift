@@ -30,6 +30,18 @@ class Bodybuilder {
         }
         return false
     }
+    
+    func checkGymName(_gymlist: [Gym], _latitude: Double, _longitude: Double) -> Gym {
+        var Gym:Gym!
+        print("PUSTY: \(Gym)")
+        for gym in _gymlist {
+            if((Swift.abs(gym.getLatitude() - _latitude) < CIRCLE_MAX_RADIUS ) && ( Swift.abs(gym.getLongitude() - _longitude) < CIRCLE_MAX_RADIUS)) {
+                Gym = gym
+            }
+        }
+        print("ZNALEZIONY: \(Gym)")
+        return Gym
+    }
 
     //LEVEL
     

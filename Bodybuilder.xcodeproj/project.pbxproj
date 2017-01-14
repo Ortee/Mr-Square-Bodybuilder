@@ -258,7 +258,7 @@
 				TargetAttributes = {
 					8DE9837C1E034376001BFC7A = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = Q8V5KS3X26;
+						DevelopmentTeam = BWV4W6RYRA;
 						ProvisioningStyle = Automatic;
 					};
 					8DE983901E034377001BFC7A = {
@@ -536,11 +536,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = Q8V5KS3X26;
+				DEVELOPMENT_TEAM = BWV4W6RYRA;
 				INFOPLIST_FILE = Bodybuilder/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mateusz.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.denis.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -553,11 +553,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = Q8V5KS3X26;
+				DEVELOPMENT_TEAM = BWV4W6RYRA;
 				INFOPLIST_FILE = Bodybuilder/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.mateusz.test;
+				PRODUCT_BUNDLE_IDENTIFIER = com.denis.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
