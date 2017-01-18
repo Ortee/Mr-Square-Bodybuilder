@@ -7,8 +7,15 @@
 //
 
 import UIKit
+import AVFoundation
 
 class GameController: UIViewController {
+    
+    var audioPlayer = AVAudioPlayer()
+
+    func updateBalance() {
+        cashLabel.text = "\(String(format: "%.2f", bodybuilder.getCash()))$"
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,11 +25,22 @@ class GameController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        updateBalance()
+    }
     @IBOutlet weak var cashLabel: UILabel!
 
     @IBAction func clickAction(_ sender: Any) {
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "coin", ofType: "wav")!))
+        }
+        catch{
+            print(error)
+        }
+        audioPlayer.play()
         bodybuilder.increaseCash()
-        cashLabel.text = "\(String(format: "%.2f", bodybuilder.getCash()))$"
+        updateBalance()
+        
     }
 
     @IBAction func tempGetExperience(_ sender: Any) {

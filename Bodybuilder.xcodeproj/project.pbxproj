@@ -10,6 +10,10 @@
 		667B9FF71E1F17F4006EFAD2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667B9FF61E1F17F4006EFAD2 /* MapViewController.swift */; };
 		667B9FF91E1F1E98006EFAD2 /* position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667B9FF81E1F1E98006EFAD2 /* position.swift */; };
 		66E3C1AB1E2F4E0D00A83C2C /* ViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E3C1AA1E2F4E0D00A83C2C /* ViewControllerTableViewCell.swift */; };
+		66E3C1AD1E2F810100A83C2C /* shop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 66E3C1AC1E2F810100A83C2C /* shop.wav */; };
+		66E3C1B01E2F889B00A83C2C /* coin.wav in Resources */ = {isa = PBXBuildFile; fileRef = 66E3C1AF1E2F889B00A83C2C /* coin.wav */; };
+		66E3C1B21E2F8D4400A83C2C /* level_up.wav in Resources */ = {isa = PBXBuildFile; fileRef = 66E3C1B11E2F8D4400A83C2C /* level_up.wav */; };
+		66E3C1B41E2F8DAC00A83C2C /* error.wav in Resources */ = {isa = PBXBuildFile; fileRef = 66E3C1B31E2F8DAC00A83C2C /* error.wav */; };
 		66EE8FBF1E1F0DB70079B172 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 66EE8FBE1E1F0DB70079B172 /* Podfile */; };
 		66F44E791E24E14200F5E290 /* style.json in Resources */ = {isa = PBXBuildFile; fileRef = 66F44E781E24E14200F5E290 /* style.json */; };
 		8D4A11BC1E1D5F29009E6916 /* bodybuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4A11BB1E1D5F29009E6916 /* bodybuilder.swift */; };
@@ -52,6 +56,10 @@
 		66E3C1791E2F345B00A83C2C /* Tauro.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Tauro.gpx; sourceTree = "<group>"; };
 		66E3C17B1E2F366800A83C2C /* TauroClose.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TauroClose.gpx; sourceTree = "<group>"; };
 		66E3C1AA1E2F4E0D00A83C2C /* ViewControllerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerTableViewCell.swift; sourceTree = "<group>"; };
+		66E3C1AC1E2F810100A83C2C /* shop.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = shop.wav; sourceTree = "<group>"; };
+		66E3C1AF1E2F889B00A83C2C /* coin.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = coin.wav; sourceTree = "<group>"; };
+		66E3C1B11E2F8D4400A83C2C /* level_up.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = level_up.wav; sourceTree = "<group>"; };
+		66E3C1B31E2F8DAC00A83C2C /* error.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = error.wav; sourceTree = "<group>"; };
 		66EE8FBE1E1F0DB70079B172 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		66F44E781E24E14200F5E290 /* style.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = style.json; sourceTree = "<group>"; };
 		8D4A11BB1E1D5F29009E6916 /* bodybuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bodybuilder.swift; sourceTree = "<group>"; };
@@ -112,6 +120,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		66E3C1AE1E2F886A00A83C2C /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				66E3C1B31E2F8DAC00A83C2C /* error.wav */,
+				66E3C1B11E2F8D4400A83C2C /* level_up.wav */,
+				66E3C1AF1E2F889B00A83C2C /* coin.wav */,
+				66E3C1AC1E2F810100A83C2C /* shop.wav */,
+			);
+			name = sounds;
+			sourceTree = "<group>";
+		};
 		66F44E751E24E0D200F5E290 /* data */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,6 +177,7 @@
 		8DE9837F1E034377001BFC7A /* Bodybuilder */ = {
 			isa = PBXGroup;
 			children = (
+				66E3C1AE1E2F886A00A83C2C /* sounds */,
 				66F44E751E24E0D200F5E290 /* data */,
 				8DE983801E034377001BFC7A /* AppDelegate.swift */,
 				8DE983841E034377001BFC7A /* Main.storyboard */,
@@ -305,8 +325,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66E3C1AD1E2F810100A83C2C /* shop.wav in Resources */,
+				66E3C1B01E2F889B00A83C2C /* coin.wav in Resources */,
 				8DE9838B1E034377001BFC7A /* LaunchScreen.storyboard in Resources */,
 				8DE983881E034377001BFC7A /* Assets.xcassets in Resources */,
+				66E3C1B21E2F8D4400A83C2C /* level_up.wav in Resources */,
+				66E3C1B41E2F8DAC00A83C2C /* error.wav in Resources */,
 				66EE8FBF1E1F0DB70079B172 /* Podfile in Resources */,
 				66F44E791E24E14200F5E290 /* style.json in Resources */,
 				8DE983861E034377001BFC7A /* Main.storyboard in Resources */,

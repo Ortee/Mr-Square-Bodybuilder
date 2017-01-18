@@ -7,8 +7,10 @@
 //
 
 import Foundation
+import AVFoundation
 
 class Bodybuilder {
+    var audioPlayer = AVAudioPlayer()
     var experience: Int = 0
     var experienceIncreaseValue = 1
     var cashIncreaseValue: Float = 1.01
@@ -87,6 +89,13 @@ class Bodybuilder {
         print("EXPL:", experience)
         if (experience >= nextLevelExp){
             level += 1
+            do {
+                audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "level_up", ofType: "wav")!))
+            }
+            catch{
+                print(error)
+            }
+            audioPlayer.play()
         }
         experience += experienceIncreaseValue
     }

@@ -7,9 +7,17 @@
 //
 
 import UIKit
+import AVFoundation
+
 
 class ShopeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var userBalance: UILabel!
+    
+    var audioPlayer = AVAudioPlayer()
+    
+    func updateBalance() {
+        userBalance.text = "\(String(format: "%.2f", bodybuilder.getCash()))$"
+    }
     
     struct Item {
         var image: String
@@ -66,13 +74,30 @@ class ShopeViewController: UIViewController, UITableViewDataSource, UITableViewD
             let alert = UIAlertController(title: "Not enought money", message: "You don't have enought money to buy this item. Play our minigames to earn some money.", preferredStyle: UIAlertControllerStyle.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
+            do {
+                audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "error", ofType: "wav")!))
+            }
+            catch{
+                print(error)
+            }
+            audioPlayer.play()
+        } else {
+            do {
+                audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "shop", ofType: "wav")!))
+            }
+            catch{
+                print(error)
+            }
+            audioPlayer.play()
         }
         tableView.deselectRow(at: indexPath, animated: false)
+        updateBalance()
     }
     
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
