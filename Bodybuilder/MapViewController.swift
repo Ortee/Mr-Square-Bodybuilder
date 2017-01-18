@@ -43,6 +43,7 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     }
     @IBAction func clickStopTraining(_ sender: Any) {
         stopTraining()
+        trainingStarted = false
         trainButton.isHidden = false
         _trainButton.isHidden = true
     }
@@ -196,6 +197,9 @@ extension MapViewController: CLLocationManagerDelegate {
                 
             } else {
                 timer.invalidate()
+                if trainingStarted {
+                    stopTraining()
+                }
                 hideGymView()
                 isInTrainingArea = false
             }
