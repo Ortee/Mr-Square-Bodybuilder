@@ -13,8 +13,9 @@ class Bodybuilder {
     var experienceIncreaseValue = 1
     var cashIncreaseValue: Float = 0.01
     let CIRCLE_MAX_RADIUS: Double = 0.002
+    let maxEnergy = 10800
+    var energy: Int = 8364
     var cash: Float = 0.00
-    var energy: Int = 100
     var level: Int = 1
     var isSad: Bool = false;
     
@@ -105,6 +106,24 @@ class Bodybuilder {
         experienceIncreaseValue += step
     }
     
+    //ENERGY
+    
+    func getEnergy() -> Int {
+        return energy
+    }
+    
+    func getEnergyPercent() -> Float {
+        return ( Float(energy) / Float(maxEnergy) * 100)
+    }
+    
+    func consumptionEnergy() {
+        energy -= 1
+    }
+    
+    func reconditioningEnergy() {
+        energy += 1
+    }
+    
     //CASH
     
     func getCash()-> Float {
@@ -122,19 +141,6 @@ class Bodybuilder {
         }
     }
     
-    //ENERGY
-    
-    func getEnergy() -> Int {
-        return energy
-    }
-    
-    func consumptionEnergy() {
-        energy -= 1
-    }
-    
-    func reconditioningEnergy() {
-        energy += 1
-    }
     
 }
 

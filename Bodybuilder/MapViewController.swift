@@ -16,9 +16,9 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     var zoomLevel: Float = 15.0
     var isInTrainingArea: Bool = false
     @IBOutlet weak var mapArea: GMSMapView!
-    @IBOutlet weak var strengthLabel: UILabel!
     @IBOutlet weak var gymStatus: UILabel!
     @IBOutlet weak var trainButton: UIButton!
+    @IBOutlet weak var _trainButton: UIButton!
     @IBOutlet weak var gymNameLabel: UILabel!
     @IBOutlet weak var experienceView: UIView!
     @IBOutlet weak var _experienceLabel: UILabel!
@@ -28,6 +28,25 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     @IBOutlet weak var levelPercentLabel: UILabel!
     @IBOutlet weak var levelProgressBar: UIView!
     @IBOutlet weak var levelBar: UIProgressView!
+    @IBOutlet weak var energyView: UIView!
+    @IBOutlet weak var energyProgressBar: UIProgressView!
+    @IBOutlet weak var energyPercentLabel: UILabel!
+    @IBOutlet weak var energyLabel: UILabel!
+    @IBOutlet weak var _timeLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBAction func clickStartTraining(_ sender: Any) {
+        trainingStarted = true
+        trainingTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(startTraining), userInfo: nil, repeats: true)
+        startTraining()
+        trainButton.isHidden = true
+        _trainButton.isHidden = false
+    }
+    @IBAction func clickStopTraining(_ sender: Any) {
+        stopTraining()
+        trainButton.isHidden = false
+        _trainButton.isHidden = true
+    }
+    
 
     // A default location to use when location permission is not granted.
     let defaultLocation = CLLocation(latitude: position.getLatitude(), longitude: position.getLongitude())
@@ -75,11 +94,70 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
 
 var queueTimer = Timer()
 var timer = Timer()
+var trainingTimer = Timer()
+var trainingStarted: Bool = false
 // Delegates to handle events for the location manager.
 extension MapViewController: CLLocationManagerDelegate {
+    
     func onTheGymAction() {
         bodybuilder.increaseExperiencePerSecond()
         experienceLabel.text = "\(bodybuilder.getExperience()) / \(bodybuilder.getExperienceForLevel(_level: bodybuilder.getLeveL()+1))"
+    }
+    
+    func showGymView() {
+        mapArea.isHidden = true
+        trainButton.isHidden = false
+        gymNameLabel.isHidden = false
+        gymStatus.isHidden = true
+        experienceView.isHidden = false
+        _experienceLabel.isHidden = false
+        experienceLabel.isHidden = false
+        expRateLabel.isHidden = false
+        levelLabel.isHidden = false
+        levelPercentLabel.isHidden = false
+        levelBar.isHidden = false
+        energyProgressBar.isHidden = false
+        energyView.isHidden = false
+        energyLabel.isHidden = false
+        energyPercentLabel.isHidden = false
+        _timeLabel.isHidden = false
+        timeLabel.isHidden = false
+    }
+    
+    func hideGymView() {
+        mapArea.isHidden = false
+        trainButton.isHidden = true
+        gymNameLabel.isHidden = true
+        gymStatus.isHidden = false
+        experienceView.isHidden = true
+        _experienceLabel.isHidden = true
+        experienceLabel.isHidden = true
+        expRateLabel.isHidden = true
+        levelPercentLabel.isHidden = true
+        levelLabel.isHidden = true
+        levelBar.isHidden = true
+        energyProgressBar.isHidden = true
+        energyView.isHidden = true
+        energyLabel.isHidden = true
+        energyPercentLabel.isHidden = false
+        _timeLabel.isHidden = true
+        timeLabel.isHidden = true
+        _trainButton.isHidden = true
+    }
+    
+    func secondsToHoursMinutesSeconds (seconds : Int) -> String {
+        return "\(seconds / 3600) : \((seconds % 3600) / 60) : \((seconds % 3600) % 60)"
+    }
+    
+    func startTraining() {
+        print("TRAINING STARTED")
+        bodybuilder.increaseExperiencePerSecond()
+
+    }
+    
+    func stopTraining() {
+        print("TRAINING STOPPED")
+        trainingTimer.invalidate()
     }
     
     func checkGymLocation() {
@@ -94,49 +172,36 @@ extension MapViewController: CLLocationManagerDelegate {
                 marker.title = gym.getName()
                 marker.map = mapArea
             }
-            // check bodybuilder is near gym
+            // check user is near gym
             let isNerarGym: Bool = bodybuilder.checkBodybuilderIsOnGym(_gymlist: gymList.getGyms(), _latitude: position.getLatitude(), _longitude: position.getLongitude())
             
             if(isNerarGym) {
                 timer.invalidate()
-                let currentGym: Gym = bodybuilder.checkGymName(_gymlist: gymList.getGyms(), _latitude: position.getLatitude(), _longitude: position.getLongitude())
-                mapArea.isHidden = true
-                trainButton.isHidden = false
-                gymNameLabel.text = currentGym.getName()
-                gymNameLabel.isHidden = false
-                gymStatus.isHidden = true
+                showGymView()
                 isInTrainingArea = true
-                experienceView.isHidden = false
-                _experienceLabel.isHidden = false
-                experienceLabel.text = "\(bodybuilder.getExperience()) / \(bodybuilder.getExperienceForLevel(_level: bodybuilder.getLeveL()+1))"
-                experienceLabel.isHidden = false
-                expRateLabel.text = "\(bodybuilder.getExperienceIncreaseValue()) strength / sec"
-                expRateLabel.isHidden = false
-                levelLabel.text = "Level " + String(bodybuilder.getLeveL())
-                levelLabel.isHidden = false
+                let currentGym: Gym = bodybuilder.checkGymName(_gymlist: gymList.getGyms(), _latitude: position.getLatitude(), _longitude: position.getLongitude())
+                
+                gymNameLabel.text = currentGym.getName()
+                
+                levelLabel.text = "LEVEL " + String(bodybuilder.getLeveL())
                 levelPercentLabel.text = "\(Int(bodybuilder.getPercentExperienceToBar()*100))%"
-                levelPercentLabel.isHidden = false
+                print(bodybuilder.getPercentExperienceToBar())
                 levelBar.progress = bodybuilder.getPercentExperienceToBar()
-                levelBar.isHidden = false
-                timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(onTheGymAction), userInfo: nil, repeats: true)
+                experienceLabel.text = "\(bodybuilder.getExperience()) / \(bodybuilder.getExperienceForLevel(_level: bodybuilder.getLeveL()+1))"
+                expRateLabel.text = "\(bodybuilder.getExperienceIncreaseValue()) strength / sec"
+                
+                energyPercentLabel.text = "\(Int(bodybuilder.getEnergyPercent()))%"
+                energyProgressBar.progress = bodybuilder.getEnergyPercent()/100
+                timeLabel.text = secondsToHoursMinutesSeconds(seconds: bodybuilder.getEnergy())
+                
             } else {
                 timer.invalidate()
-                mapArea.isHidden = false
-                trainButton.isHidden = true
-                gymNameLabel.isHidden = true
-                gymStatus.isHidden = false
+                hideGymView()
                 isInTrainingArea = false
-                experienceView.isHidden = true
-                _experienceLabel.isHidden = true
-                experienceLabel.isHidden = true
-                expRateLabel.isHidden = true
-                levelPercentLabel.isHidden = true
-                levelLabel.isHidden = true
-                levelBar.isHidden = true
             }
-            print("GYMY HERE")
+            print("USER IN GYM LOCATION")
         } else {
-            print("GYMOW BRAK")
+            print("USER NOT IN GYM LOCATION")
         }
     }
     
@@ -144,26 +209,14 @@ extension MapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location: CLLocation = locations.last!
         print("Location: \(location.coordinate.latitude) \(location.coordinate.longitude)")
-        
         position.setPosition(_latitude: location.coordinate.latitude, _longitude: location.coordinate.longitude)
-        
-        
         queueTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(checkGymLocation), userInfo: nil, repeats: true)
-        
         // get Nerby Gyms
         gymList.getNerbyGyms(latitude: position.getLatitude(), longitude: position.getLongitude())
-        //        timer.invalidate()
         
         let currentLocation: GMSCameraPosition = GMSCameraPosition.camera(withLatitude: location.coordinate.latitude,
                                                                           longitude: location.coordinate.longitude,
                                                                           zoom: zoomLevel)
-//        if mapArea.isHidden {
-//            mapArea.isHidden = false
-//            mapArea.camera = currentLocation
-//        } else {
-//            mapArea.animate(to: currentLocation)
-//        }
-        
         if isInTrainingArea == true {
             mapArea.camera = currentLocation
         } else {
@@ -171,7 +224,6 @@ extension MapViewController: CLLocationManagerDelegate {
         }
         
     }
-    
     
     // Handle authorization for the location manager.
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
