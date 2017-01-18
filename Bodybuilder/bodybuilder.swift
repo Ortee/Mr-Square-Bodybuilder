@@ -117,7 +117,7 @@ class Bodybuilder {
     }
     
     func consumptionEnergy() {
-        energy -= 1
+        energy -= 2000
     }
     
     func reconditioningEnergy() {
