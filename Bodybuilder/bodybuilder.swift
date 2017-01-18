@@ -11,7 +11,7 @@ import Foundation
 class Bodybuilder {
     var experience: Int = 0
     var experienceIncreaseValue = 1
-    var cashIncreaseValue: Float = 0.01
+    var cashIncreaseValue: Float = 1.01
     let CIRCLE_MAX_RADIUS: Double = 0.0004
     let maxEnergy = 10800
     var energy: Int = 10800
