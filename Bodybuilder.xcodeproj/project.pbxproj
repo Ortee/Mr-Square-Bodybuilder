@@ -48,6 +48,8 @@
 		667B9FF61E1F17F4006EFAD2 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		667B9FF81E1F1E98006EFAD2 /* position.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = position.swift; sourceTree = "<group>"; };
 		66DDE79B1E29A3840014985E /* Location.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Location.gpx; sourceTree = "<group>"; };
+		66E3C1791E2F345B00A83C2C /* Tauro.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Tauro.gpx; sourceTree = "<group>"; };
+		66E3C17B1E2F366800A83C2C /* TauroClose.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TauroClose.gpx; sourceTree = "<group>"; };
 		66EE8FBE1E1F0DB70079B172 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		66F44E781E24E14200F5E290 /* style.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = style.json; sourceTree = "<group>"; };
 		8D4A11BB1E1D5F29009E6916 /* bodybuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bodybuilder.swift; sourceTree = "<group>"; };
@@ -113,6 +115,8 @@
 			children = (
 				66F44E781E24E14200F5E290 /* style.json */,
 				66DDE79B1E29A3840014985E /* Location.gpx */,
+				66E3C1791E2F345B00A83C2C /* Tauro.gpx */,
+				66E3C17B1E2F366800A83C2C /* TauroClose.gpx */,
 			);
 			name = data;
 			sourceTree = "<group>";

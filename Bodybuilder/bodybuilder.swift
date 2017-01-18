@@ -12,7 +12,7 @@ class Bodybuilder {
     var experience: Int = 0
     var experienceIncreaseValue = 1
     var cashIncreaseValue: Float = 0.01
-    let CIRCLE_MAX_RADIUS: Double = 0.002
+    let CIRCLE_MAX_RADIUS: Double = 0.0004
     let maxEnergy = 10800
     var energy: Int = 10800
     var cash: Float = 0.00
@@ -34,13 +34,11 @@ class Bodybuilder {
     
     func checkGymName(_gymlist: [Gym], _latitude: Double, _longitude: Double) -> Gym {
         var Gym:Gym!
-        print("PUSTY: \(Gym)")
         for gym in _gymlist {
             if((Swift.abs(gym.getLatitude() - _latitude) < CIRCLE_MAX_RADIUS ) && ( Swift.abs(gym.getLongitude() - _longitude) < CIRCLE_MAX_RADIUS)) {
                 Gym = gym
             }
         }
-        print("ZNALEZIONY: \(Gym)")
         return Gym
     }
 
@@ -118,6 +116,9 @@ class Bodybuilder {
     
     func consumptionEnergy() {
         energy -= 1
+        if energy < 0 {
+            energy = 0
+        }
     }
     
     func reconditioningEnergy() {

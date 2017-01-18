@@ -32,9 +32,10 @@ class StatsViewController: UIViewController {
         EnergyLabel.text = "\(String(bodybuilder.getEnergy()))%"
         LevelLabel.text = String(bodybuilder.getLeveL())
         experienceBar.progress = bodybuilder.getPercentExperienceToBar()
-        ExperiencePercentLabel.text = "\(Int(bodybuilder.getPercentExperienceToBar()*100))%"
-        energyPercentLabel.text = "\(String(bodybuilder.getEnergy()))%"
-        EnergyBar.progress = Float(bodybuilder.getEnergy())/100
+        ExperiencePercentLabel.text = "\(Int(bodybuilder.getPercentExperienceToBar()*100))%"        
+        energyPercentLabel.text = "\(Int(bodybuilder.getEnergyPercent()))%"
+        EnergyBar.progress = bodybuilder.getEnergyPercent()/100
+  
         
         bodybuilderImage.image = UIImage(named: "\(String(bodybuilder.getImageLevel()))_\(bodybuilder.getImageMood()).png")
     }
