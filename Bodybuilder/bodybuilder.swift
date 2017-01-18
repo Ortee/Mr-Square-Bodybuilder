@@ -139,11 +139,14 @@ class Bodybuilder {
         cash += cashIncreaseValue
     }
     
-    func buyItem(price: Float, strengthBoost: Int) {
+    func buyItem(price: Float, strengthBoost: Int) -> Bool{
         if(cash >= price) {
             cash -= price
             experienceIncreaseValue += strengthBoost
+            return true
         }
+        
+        return false
     }
     
     

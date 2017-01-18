@@ -44,6 +44,9 @@ class ShopeViewController: UIViewController, UITableViewDataSource, UITableViewD
         tableView.backgroundColor = UIColor(red: 51/255, green: 62/255, blue: 79/255, alpha: 1.0)
         cell.contentView.backgroundColor = UIColor(red: 51/255, green: 62/255, blue: 79/255, alpha: 1.0)
         cell.layer.borderColor = UIColor(red:0.58, green:0.53, blue:0.90, alpha:1.0).cgColor
+        let colorView = UIView()
+        colorView.backgroundColor = UIColor(red:0.58, green:0.53, blue:0.90, alpha:1.0)
+        cell.selectedBackgroundView = colorView
     }
     
     
@@ -55,13 +58,15 @@ class ShopeViewController: UIViewController, UITableViewDataSource, UITableViewD
         cell.foodDescription.text = foods[indexPath.row].description
         cell.foodPrice.text = "\(String(format: "%.2f", foods[indexPath.row].price))$"
         
-        
-        
         return (cell)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        bodybuilder.buyItem(price: foods[indexPath.row].price, strengthBoost: foods[indexPath.row].strengthBoost)
+        if !bodybuilder.buyItem(price: foods[indexPath.row].price, strengthBoost: foods[indexPath.row].strengthBoost) {
+            let alert = UIAlertController(title: "Not enought money", message: "You don't have enought money to buy this item. Play our minigames to earn some money.", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
         tableView.deselectRow(at: indexPath, animated: false)
     }
     
