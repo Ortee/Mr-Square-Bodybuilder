@@ -34,6 +34,9 @@ class MapViewController: UIViewController, GMSMapViewDelegate {
     @IBOutlet weak var energyLabel: UILabel!
     @IBOutlet weak var _timeLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var noEnergyLabel: UILabel!
+    @IBOutlet weak var noEnergyRegLabel: UILabel!
+    @IBOutlet weak var noEnergyView: UIView!
     @IBAction func clickStartTraining(_ sender: Any) {
         trainingStarted = true
         trainingTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(startTraining), userInfo: nil, repeats: true)
@@ -142,6 +145,22 @@ extension MapViewController: CLLocationManagerDelegate {
         _timeLabel.isHidden = true
         timeLabel.isHidden = true
         _trainButton.isHidden = true
+        noEnergyView.isHidden = true
+        noEnergyLabel.isHidden = true
+        noEnergyRegLabel.isHidden = true
+    }
+    
+    func showNoEnergyView() {
+        noEnergyView.isHidden = false
+        noEnergyLabel.isHidden = false
+        noEnergyRegLabel.isHidden = false
+    }
+    
+    func hideNoEnergyView() {
+        noEnergyView.isHidden = true
+        noEnergyLabel.isHidden = true
+        noEnergyRegLabel.isHidden = true
+        
     }
     
     func secondsToHoursMinutesSeconds (seconds : Int) -> String {
@@ -168,6 +187,9 @@ extension MapViewController: CLLocationManagerDelegate {
         trainingTimer.invalidate()
         trainButton.isHidden = false
         _trainButton.isHidden = true
+        if bodybuilder.getEnergy() <= 0 {
+            showNoEnergyView()
+        }
     }
     
     func checkGymLocation() {
@@ -201,6 +223,7 @@ extension MapViewController: CLLocationManagerDelegate {
                 expRateLabel.text = "\(bodybuilder.getExperienceIncreaseValue()) strength / sec"
                 
                 if bodybuilder.getEnergy() > 0 {
+                    hideNoEnergyView()
                     energyPercentLabel.text = "\(Int(bodybuilder.getEnergyPercent()))%"
                     energyProgressBar.progress = bodybuilder.getEnergyPercent()/100
                     timeLabel.text = secondsToHoursMinutesSeconds(seconds: bodybuilder.getEnergy())

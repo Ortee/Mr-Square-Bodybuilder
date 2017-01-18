@@ -297,6 +297,27 @@
                                             <action selector="clickStopTraining:" destination="ns6-Cw-aO1" eventType="touchUpInside" id="Er4-ND-tdl"/>
                                         </connections>
                                     </button>
+                                    <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hzf-l0-3lr">
+                                        <rect key="frame" x="16" y="436" width="343" height="175"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wait until it regenerates" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UMB-er-Do9">
+                                                <rect key="frame" x="8" y="102" width="327" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                                <color key="textColor" red="0.98823529409999999" green="0.96470588239999999" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NO ENERGY FOR TRAINING" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9YO-Mb-maM">
+                                                <rect key="frame" x="8" y="23" width="327" height="78"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="23"/>
+                                                <color key="textColor" red="0.98823529409999999" green="0.96470588239999999" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.76078431369999999" green="0.28942543240000002" blue="0.2164866459" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" red="0.20000000000000001" green="0.24313725490196078" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -336,6 +357,9 @@
                         <outlet property="levelPercentLabel" destination="QAd-Ci-b9g" id="mvZ-pL-7ya"/>
                         <outlet property="levelProgressBar" destination="iSj-MK-gxb" id="L2L-z8-DSJ"/>
                         <outlet property="mapArea" destination="ggQ-PT-O1x" id="DtF-Me-u5w"/>
+                        <outlet property="noEnergyLabel" destination="9YO-Mb-maM" id="TvT-hj-YcD"/>
+                        <outlet property="noEnergyRegLabel" destination="UMB-er-Do9" id="ZwC-M4-0Yc"/>
+                        <outlet property="noEnergyView" destination="hzf-l0-3lr" id="GCB-10-Che"/>
                         <outlet property="timeLabel" destination="GJn-Iz-AdR" id="7Sk-jI-I7c"/>
                         <outlet property="trainButton" destination="kLK-Hy-Eyj" id="0lX-3h-R8X"/>
                     </connections>

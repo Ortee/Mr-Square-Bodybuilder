@@ -14,7 +14,7 @@ class Bodybuilder {
     var cashIncreaseValue: Float = 0.01
     let CIRCLE_MAX_RADIUS: Double = 0.002
     let maxEnergy = 10800
-    var energy: Int = 8364
+    var energy: Int = 10800
     var cash: Float = 0.00
     var level: Int = 1
     var isSad: Bool = false;
@@ -117,7 +117,7 @@ class Bodybuilder {
     }
     
     func consumptionEnergy() {
-        energy -= 2000
+        energy -= 1
     }
     
     func reconditioningEnergy() {
