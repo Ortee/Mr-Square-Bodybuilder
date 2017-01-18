@@ -153,6 +153,7 @@ extension MapViewController: CLLocationManagerDelegate {
     func startTraining() {
         print("TRAINING STARTED")
         bodybuilder.increaseExperiencePerSecond()
+        bodybuilder.consumptionEnergy()
 
     }
     

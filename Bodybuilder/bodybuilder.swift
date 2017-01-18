@@ -124,6 +124,10 @@ class Bodybuilder {
         energy += 1
     }
     
+    func addEnergy(_energy: Int) {
+        energy += energy
+    }
+    
     //CASH
     
     func getCash()-> Float {
