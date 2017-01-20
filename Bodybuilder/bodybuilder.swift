@@ -8,12 +8,13 @@
 
 import Foundation
 import AVFoundation
+import UIKit
 
 class Bodybuilder {
     var audioPlayer = AVAudioPlayer()
     var experience: Int = 0
     var experienceIncreaseValue = 1
-    var cashIncreaseValue: Float = 1.01
+    var cashIncreaseValue: Float = 500.01
     let CIRCLE_MAX_RADIUS: Double = 0.0004
     let maxEnergy = 10800
     var energy: Int = 10800
@@ -23,6 +24,7 @@ class Bodybuilder {
     
     init() {
         print("BODYBUILDER INIT")
+        print("DEVICE UUID: \(UIDevice.current.identifierForVendor!.uuidString)")
     }
     
     func checkBodybuilderIsOnGym(_gymlist: [Gym], _latitude: Double, _longitude: Double) -> Bool {
