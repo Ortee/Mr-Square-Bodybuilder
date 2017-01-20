@@ -436,7 +436,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="353" height="66"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eli-X6-jvZ" id="59Q-4S-LY2">
-                                                    <rect key="frame" x="0.0" y="0.0" width="353" height="65"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="353" height="65.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="enz-gC-VUX">
@@ -493,14 +493,20 @@
                                 <segments>
                                     <segment title="Foods"/>
                                     <segment title="Suplements"/>
+                                    <segment title="Steroids"/>
                                 </segments>
                                 <color key="tintColor" red="0.58431372550000005" green="0.52941176469999995" blue="0.90196078430000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="segmentedActionChanged:" destination="0KP-yO-cCH" eventType="valueChanged" id="fQ2-kc-Ng1"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.24313725489999999" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Sklep" id="XXG-OW-sjN"/>
                     <connections>
+                        <outlet property="shopSegmentedControl" destination="crJ-LT-XhA" id="cHm-Pr-iwS"/>
+                        <outlet property="shopTableView" destination="WQA-Qq-OW7" id="m7j-xN-jVe"/>
                         <outlet property="userBalance" destination="GDC-0e-6DR" id="Bc2-49-BKJ"/>
                     </connections>
                 </viewController>

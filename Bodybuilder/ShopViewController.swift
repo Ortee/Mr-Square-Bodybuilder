@@ -12,7 +12,8 @@ import AVFoundation
 
 class ShopeViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var userBalance: UILabel!
-    
+    @IBOutlet weak var shopSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var shopTableView: UITableView!
     var audioPlayer = AVAudioPlayer()
     
     func updateBalance() {
@@ -42,10 +43,49 @@ class ShopeViewController: UIViewController, UITableViewDataSource, UITableViewD
         Item(image: "12_chicken", name: "Chicken", description: "+1 str/s", price: 1, strengthBoost: 1),
         Item(image: "13_steak", name: "Steak", description: "+1 str/s", price: 1, strengthBoost: 1)
     ]
+    
+    let suplements = [
+        Item(image: "14_energy-drink", name: "Energy Drink", description: "+1 str/s", price: 1, strengthBoost: 1),
+        Item(image: "15_vitamins", name: "Vitamins", description: "+1 str/s", price: 1, strengthBoost: 1),
+        Item(image: "16_bcaa", name: "Bcaa", description: "+1 str/s", price: 1, strengthBoost: 1),
+        Item(image: "17_creatine", name: "Creatine", description: "+1 str/s", price: 1, strengthBoost: 1),
+        Item(image: "18_protein-powder", name: "Protein Powder", description: "+1 str/s", price: 1, strengthBoost: 1),
+    ]
+    
+    let steroids = [
+        Item(image: "19_testosterone", name: "Testosterone", description: "+1 str/s", price: 1, strengthBoost: 1),
+        Item(image: "20_trenbolone", name: "Trenbolone", description: "+1 str/s", price: 1, strengthBoost: 1),
+        Item(image: "21_synthol", name: "Synthol", description: "+1 str/s", price: 1, strengthBoost: 1),
+    ]
+    
+    
+    @IBAction func segmentedActionChanged(_ sender: Any) {
+        shopTableView.reloadData()
+    }
   
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return foods.count
+        
+        var segmentedIndexCount = 0
+        
+        switch(shopSegmentedControl.selectedSegmentIndex)
+        {
+        case 0:
+            segmentedIndexCount = foods.count
+            break
+        case 1:
+            segmentedIndexCount = suplements.count
+            break
+        case 2:
+            segmentedIndexCount = steroids.count
+            break
+            
+        default:
+            break
+            
+        }
+        print("INDEX: \(segmentedIndexCount)")
+        return segmentedIndexCount
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -61,10 +101,33 @@ class ShopeViewController: UIViewController, UITableViewDataSource, UITableViewD
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ViewControllerTableViewCell
         
-        cell.foodImage.image = UIImage(named: (foods[indexPath.row].image + ".png"))
-        cell.foodName.text = foods[indexPath.row].name
-        cell.foodDescription.text = foods[indexPath.row].description
-        cell.foodPrice.text = "\(String(format: "%.2f", foods[indexPath.row].price))$"
+        switch(shopSegmentedControl.selectedSegmentIndex)
+        {
+        case 0:
+            cell.foodImage.image = UIImage(named: (foods[indexPath.row].image + ".png"))
+            cell.foodName.text = foods[indexPath.row].name
+            cell.foodDescription.text = foods[indexPath.row].description
+            cell.foodPrice.text = "\(String(format: "%.2f", foods[indexPath.row].price))$"
+            break
+        case 1:
+            cell.foodImage.image = UIImage(named: (suplements[indexPath.row].image + ".png"))
+            cell.foodName.text = suplements[indexPath.row].name
+            cell.foodDescription.text = suplements[indexPath.row].description
+            cell.foodPrice.text = "\(String(format: "%.2f", suplements[indexPath.row].price))$"
+            break
+        case 2:
+            cell.foodImage.image = UIImage(named: (steroids[indexPath.row].image + ".png"))
+            cell.foodName.text = steroids[indexPath.row].name
+            cell.foodDescription.text = steroids[indexPath.row].description
+            cell.foodPrice.text = "\(String(format: "%.2f", steroids[indexPath.row].price))$"
+            break
+            
+        default:
+            break
+            
+        }
+        
+
         
         return (cell)
     }
