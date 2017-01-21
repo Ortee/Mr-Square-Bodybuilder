@@ -29,6 +29,20 @@ func initialStoreIntegerValue (value: Int, recordName: String) {
     }
 }
 
+func initialStoreStringValue (value: String, recordName: String) {
+    let context = getContext()
+    let entity =  NSEntityDescription.entity(forEntityName: "Player", in: context)
+    let transc = NSManagedObject(entity: entity!, insertInto: context)
+    transc.setValue(value, forKey: recordName)
+    do {
+        try context.save()
+    } catch let error as NSError  {
+        print("Could not save \(error), \(error.userInfo)")
+    } catch {
+        
+    }
+}
+
 func initialStoreFloatValue (value: Float, recordName: String) {
     let context = getContext()
     let entity =  NSEntityDescription.entity(forEntityName: "Player", in: context)
@@ -70,6 +84,19 @@ func getFloatRecord (recordName: String) -> Float {
     return 0.00
 }
 
+func getStringRecord (recordName: String) -> String {
+    let fetchRequest: NSFetchRequest<Player> = Player.fetchRequest()
+    
+    do {
+        let searchResults = try getContext().fetch(fetchRequest)
+        if(searchResults.count > 0) {
+            return searchResults.first?.value(forKey: recordName) as! String
+        }
+    } catch {
+    }
+    return ""
+}
+
 func updateSingleIntegerRecord(value: Int, recordName: String) {
     let fetchRequest: NSFetchRequest<Player> = Player.fetchRequest()
     
@@ -91,6 +118,21 @@ func updateSingleFloatRecord(value: Float, recordName: String) {
     do {
         if(try getContext().fetch(fetchRequest).count == 0){
             initialStoreFloatValue(value: value, recordName: recordName)
+        }
+        let searchResult = try getContext().fetch(fetchRequest).first
+        searchResult?.setValue(value, forKey: recordName)
+        try searchResult?.managedObjectContext?.save()
+    } catch {
+        
+    }
+}
+
+func updateSingleStringRecord(value: String, recordName: String) {
+    let fetchRequest: NSFetchRequest<Player> = Player.fetchRequest()
+    
+    do {
+        if(try getContext().fetch(fetchRequest).count == 0){
+            initialStoreStringValue(value: value, recordName: recordName)
         }
         let searchResult = try getContext().fetch(fetchRequest).first
         searchResult?.setValue(value, forKey: recordName)

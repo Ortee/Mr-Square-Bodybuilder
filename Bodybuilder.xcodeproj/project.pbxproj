@@ -19,6 +19,7 @@
 		8D1EDC501E33077700AAB727 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1EDC4D1E33077700AAB727 /* data.swift */; };
 		8D1EDC511E33077700AAB727 /* data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8D1EDC4E1E33077700AAB727 /* data.xcdatamodeld */; };
 		8D1EDC531E33AA4D00AAB727 /* FoodDropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1EDC521E33AA4D00AAB727 /* FoodDropViewController.swift */; };
+		8D1EDC551E340CD500AAB727 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1EDC541E340CD500AAB727 /* SettingsViewController.swift */; };
 		8D4A11BC1E1D5F29009E6916 /* bodybuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4A11BB1E1D5F29009E6916 /* bodybuilder.swift */; };
 		8D5EE7C91E26C87500EAA6F1 /* GameController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D5EE7C81E26C87500EAA6F1 /* GameController.swift */; };
 		8D81BEEA1E1EB4EC009A54AD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D81BEE91E1EB4EB009A54AD /* CoreLocation.framework */; };
@@ -68,6 +69,7 @@
 		8D1EDC4D1E33077700AAB727 /* data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
 		8D1EDC4F1E33077700AAB727 /* data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = data.xcdatamodel; sourceTree = "<group>"; };
 		8D1EDC521E33AA4D00AAB727 /* FoodDropViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodDropViewController.swift; sourceTree = "<group>"; };
+		8D1EDC541E340CD500AAB727 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		8D4A11BB1E1D5F29009E6916 /* bodybuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = bodybuilder.swift; sourceTree = "<group>"; };
 		8D5EE7C81E26C87500EAA6F1 /* GameController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameController.swift; sourceTree = "<group>"; };
 		8D81BEE91E1EB4EB009A54AD /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -201,6 +203,7 @@
 				8D1EDC4E1E33077700AAB727 /* data.xcdatamodeld */,
 				66E3C1AA1E2F4E0D00A83C2C /* ViewControllerTableViewCell.swift */,
 				8D1EDC521E33AA4D00AAB727 /* FoodDropViewController.swift */,
+				8D1EDC541E340CD500AAB727 /* SettingsViewController.swift */,
 			);
 			path = Bodybuilder;
 			sourceTree = "<group>";
@@ -425,6 +428,7 @@
 				8DA97B081E1DD95A00565D2B /* StatsViewController.swift in Sources */,
 				8D4A11BC1E1D5F29009E6916 /* bodybuilder.swift in Sources */,
 				667B9FF91E1F1E98006EFAD2 /* position.swift in Sources */,
+				8D1EDC551E340CD500AAB727 /* SettingsViewController.swift in Sources */,
 				667B9FF71E1F17F4006EFAD2 /* MapViewController.swift in Sources */,
 				66E3C1AB1E2F4E0D00A83C2C /* ViewControllerTableViewCell.swift in Sources */,
 			);

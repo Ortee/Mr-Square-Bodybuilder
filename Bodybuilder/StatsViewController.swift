@@ -49,11 +49,14 @@ class StatsViewController: UIViewController {
         bodybuilder.saveData()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        updateUserData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         bodybuilder.loadData()
         Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(saveDataTimerSchedule), userInfo: nil, repeats: true)
-        updateUserData()
         statsTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateUserData), userInfo: nil, repeats: true)
     }
     

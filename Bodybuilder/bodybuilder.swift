@@ -23,11 +23,20 @@ class Bodybuilder {
     var isSad: Bool = false;
     var click_count: Int = 0
     var time_on_gym: Int = 0
-    var money_spent: Int = 0
+    var money_spend: Int = 0
+    var nickname: String = ""
     
     init() {
         print("BODYBUILDER INIT")
         print("DEVICE UUID: \(UIDevice.current.identifierForVendor!.uuidString)")
+    }
+    
+    func setNickname(_nickname: String) {
+        nickname = _nickname
+    }
+    
+    func getNickname() -> String {
+        return nickname
     }
     
     func checkBodybuilderIsOnGym(_gymlist: [Gym], _latitude: Double, _longitude: Double) -> Bool {
@@ -171,21 +180,43 @@ class Bodybuilder {
     }
     
     func saveData() {
+        updateSingleIntegerRecord(value: level, recordName: "level")
         updateSingleIntegerRecord(value: click_count, recordName: "click_count")
         updateSingleIntegerRecord(value: experience, recordName: "strength")
         updateSingleIntegerRecord(value: experienceIncreaseValue, recordName: "strength_growth")
         updateSingleIntegerRecord(value: time_on_gym, recordName: "time_on_gym")
-        updateSingleIntegerRecord(value: money_spent, recordName: "money_spent")
+        updateSingleIntegerRecord(value: money_spend, recordName: "money_spend")
         updateSingleFloatRecord(value: cash, recordName: "coins")
+        updateSingleStringRecord(value: nickname, recordName: "nickname")
     }
     
     func loadData() {
+        level = getIntRecord(recordName: "level")
         cash = getFloatRecord(recordName: "coins")
         experience = getIntRecord(recordName: "strength")
         experienceIncreaseValue = getIntRecord(recordName: "strength_growth")
         time_on_gym = getIntRecord(recordName: "time_on_gym")
-        money_spent = getIntRecord(recordName: "money_spent")
+        money_spend = getIntRecord(recordName: "money_spend")
         click_count = getIntRecord(recordName: "click_count")
+        nickname = getStringRecord(recordName: "nickname")
+    }
+    
+    func restartData() {
+        updateSingleIntegerRecord(value: 0, recordName: "click_count")
+        updateSingleIntegerRecord(value: 0, recordName: "strength")
+        updateSingleIntegerRecord(value: 0, recordName: "strength_growth")
+        updateSingleIntegerRecord(value: 0, recordName: "time_on_gym")
+        updateSingleIntegerRecord(value: 0, recordName: "money_spend")
+        updateSingleFloatRecord(value: 0.00, recordName: "coins")
+        updateSingleStringRecord(value: "", recordName: "nickname")
+        updateSingleIntegerRecord(value: 1, recordName: "level")
+        click_count = 0
+        nickname = ""
+        experience = 0
+        time_on_gym = 0
+        cash = 0.00
+        money_spend = 0
+        level = 1
     }
     
 }
