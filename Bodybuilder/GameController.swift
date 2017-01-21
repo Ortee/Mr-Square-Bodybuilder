@@ -14,7 +14,7 @@ class GameController: UIViewController {
     var audioPlayer = AVAudioPlayer()
 
     func updateBalance() {
-        cashLabel.text = "\(String(format: "%.2f", bodybuilder.getCash()))$"
+        cashLabel.text = "\(String(format: "%.2f", bodybuilder.getCash())) $"
     }
 
     override func viewDidLoad() {
@@ -40,10 +40,5 @@ class GameController: UIViewController {
         audioPlayer.play()
         bodybuilder.increaseCash()
         updateBalance()
-        
-    }
-
-    @IBAction func tempGetExperience(_ sender: Any) {
-        bodybuilder.increaseExperiencePerSecond()
     }
 }
