@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMaps
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,4 +22,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    func applicationWillResignActive(_ application: UIApplication) {
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+    }
+    
+    func applicationWillEnterForeground(_ application: UIApplication) {
+    }
+    
+    func applicationDidBecomeActive(_ application: UIApplication) {
+    }
+    
+    func applicationWillTerminate(_ application: UIApplication) {
+    }
+    
+    lazy var persistentContainer: NSPersistentContainer = {
+        
+        let container = NSPersistentContainer(name: "data")
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            if let error = error {
+                
+                fatalError("Unresolved error \(error), \(error)")
+            }
+        })
+        return container
+    }()
 }
