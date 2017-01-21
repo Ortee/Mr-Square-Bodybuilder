@@ -132,28 +132,85 @@ class ShopeViewController: UIViewController, UITableViewDataSource, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if !bodybuilder.buyItem(price: foods[indexPath.row].price, strengthBoost: foods[indexPath.row].strengthBoost) {
-            let alert = UIAlertController(title: "Not enought money", message: "You don't have enought money to buy this item. Play our minigames to earn some money.", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
-            do {
-                audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "error", ofType: "wav")!))
+        switch(shopSegmentedControl.selectedSegmentIndex)
+        {
+        case 0:
+            if !bodybuilder.buyItem(price: foods[indexPath.row].price, strengthBoost: foods[indexPath.row].strengthBoost) {
+                let alert = UIAlertController(title: "Not enought money", message: "You don't have enought money to buy this item. Play our minigames to earn some money.", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                do {
+                    audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "error", ofType: "wav")!))
+                }
+                catch{
+                    print(error)
+                }
+                audioPlayer.play()
+            } else {
+                do {
+                    audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "shop", ofType: "wav")!))
+                }
+                catch{
+                    print(error)
+                }
+                audioPlayer.play()
             }
-            catch{
-                print(error)
+            tableView.deselectRow(at: indexPath, animated: false)
+            updateBalance()
+            break
+        case 1:
+            if !bodybuilder.buyItem(price: suplements[indexPath.row].price, strengthBoost: suplements[indexPath.row].strengthBoost) {
+                let alert = UIAlertController(title: "Not enought money", message: "You don't have enought money to buy this item. Play our minigames to earn some money.", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                do {
+                    audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "error", ofType: "wav")!))
+                }
+                catch{
+                    print(error)
+                }
+                audioPlayer.play()
+            } else {
+                do {
+                    audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "shop", ofType: "wav")!))
+                }
+                catch{
+                    print(error)
+                }
+                audioPlayer.play()
             }
-            audioPlayer.play()
-        } else {
-            do {
-                audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "shop", ofType: "wav")!))
+            tableView.deselectRow(at: indexPath, animated: false)
+            updateBalance()
+            break
+        case 2:
+            if !bodybuilder.buyItem(price: steroids[indexPath.row].price, strengthBoost: steroids[indexPath.row].strengthBoost) {
+                let alert = UIAlertController(title: "Not enought money", message: "You don't have enought money to buy this item. Play our minigames to earn some money.", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                do {
+                    audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "error", ofType: "wav")!))
+                }
+                catch{
+                    print(error)
+                }
+                audioPlayer.play()
+            } else {
+                do {
+                    audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "shop", ofType: "wav")!))
+                }
+                catch{
+                    print(error)
+                }
+                audioPlayer.play()
             }
-            catch{
-                print(error)
-            }
-            audioPlayer.play()
+            tableView.deselectRow(at: indexPath, animated: false)
+            updateBalance()
+            break
+            
+        default:
+            break
+            
         }
-        tableView.deselectRow(at: indexPath, animated: false)
-        updateBalance()
     }
     
         
