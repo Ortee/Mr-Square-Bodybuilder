@@ -48,8 +48,10 @@ func getIntRecord (recordName: String) -> Int {
     
     do {
         let searchResults = try getContext().fetch(fetchRequest)
-        return searchResults.first?.value(forKey: recordName) as! Int
-
+        print(searchResults.count)
+        if(searchResults.count > 0) {
+            return searchResults.first?.value(forKey: recordName) as! Int
+        }
     } catch {
     }
     return 0
@@ -60,7 +62,9 @@ func getFloatRecord (recordName: String) -> Float {
     
     do {
         let searchResults = try getContext().fetch(fetchRequest)
-        return searchResults.first?.value(forKey: recordName) as! Float
+        if(searchResults.count > 0) {
+            return searchResults.first?.value(forKey: recordName) as! Float
+        }
     } catch {
     }
     return 0.00
@@ -70,6 +74,9 @@ func updateSingleIntegerRecord(value: Int, recordName: String) {
     let fetchRequest: NSFetchRequest<Player> = Player.fetchRequest()
     
     do {
+        if(try getContext().fetch(fetchRequest).count == 0){
+            initialStoreIntegerValue(value: value, recordName: recordName)
+        }
         let searchResult = try getContext().fetch(fetchRequest).first
         searchResult?.setValue(value, forKey: recordName)
         try searchResult?.managedObjectContext?.save()
@@ -82,6 +89,9 @@ func updateSingleFloatRecord(value: Float, recordName: String) {
     let fetchRequest: NSFetchRequest<Player> = Player.fetchRequest()
     
     do {
+        if(try getContext().fetch(fetchRequest).count == 0){
+            initialStoreFloatValue(value: value, recordName: recordName)
+        }
         let searchResult = try getContext().fetch(fetchRequest).first
         searchResult?.setValue(value, forKey: recordName)
         try searchResult?.managedObjectContext?.save()

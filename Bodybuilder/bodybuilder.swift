@@ -167,7 +167,6 @@ class Bodybuilder {
     }
     
     func saveData() {
-        print("BODYBUILDER SAVED")
         updateSingleIntegerRecord(value: click_count, recordName: "click_count")
         updateSingleIntegerRecord(value: experience, recordName: "strength")
         updateSingleIntegerRecord(value: experienceIncreaseValue, recordName: "strength_growth")
@@ -177,7 +176,6 @@ class Bodybuilder {
     }
     
     func loadData() {
-        print("BODYBUILDER LOADED")
         cash = getFloatRecord(recordName: "coins")
         experience = getIntRecord(recordName: "strength")
         experienceIncreaseValue = getIntRecord(recordName: "strength_growth")
