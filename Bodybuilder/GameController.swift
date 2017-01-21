@@ -12,22 +12,24 @@ import AVFoundation
 class GameController: UIViewController {
     
     var audioPlayer = AVAudioPlayer()
-
-    func updateBalance() {
+    @IBOutlet weak var coinRate: UILabel!
+    var gameTimer = Timer()
+    
+    func updateInfo() {
         cashLabel.text = "\(String(format: "%.2f", bodybuilder.getCash())) $"
+        coinRate.text = "\(bodybuilder.getCashRate()) / tap"
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateInfo()
+        gameTimer = Timer.scheduledTimer(timeInterval: 5, target: self, selector: #selector(updateInfo), userInfo: nil, repeats: true)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        updateBalance()
-    }
     @IBOutlet weak var cashLabel: UILabel!
 
     @IBAction func clickAction(_ sender: Any) {
@@ -39,6 +41,6 @@ class GameController: UIViewController {
         }
         audioPlayer.play()
         bodybuilder.increaseCash()
-        updateBalance()
+        updateInfo()
     }
 }

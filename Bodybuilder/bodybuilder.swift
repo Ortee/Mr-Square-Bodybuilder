@@ -14,7 +14,7 @@ class Bodybuilder {
     var audioPlayer = AVAudioPlayer()
     var experience: Int = 0
     var experienceIncreaseValue = 1
-    var cashIncreaseValue: Float = 500.01
+    var cashIncreaseValue: Float = 0.05
     let CIRCLE_MAX_RADIUS: Double = 0.0004
     let maxEnergy = 10800
     var energy: Int = 10800
@@ -146,8 +146,11 @@ class Bodybuilder {
         return cash
     }
     
+    func getCashRate() -> String {
+        return String(0.05 * Float(level) * 0.55)
+    }
     func increaseCash(){
-        cash += cashIncreaseValue
+        cash += (cashIncreaseValue * Float(level) * 0.55)
     }
     
     func buyItem(price: Float, strengthBoost: Int) -> Bool{
