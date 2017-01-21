@@ -10,6 +10,7 @@ import UIKit
 
 class FoodDropViewController: UIViewController {
 
+    @IBOutlet weak var cashLabel: UILabel!
     @IBOutlet weak var pointsLabel: UILabel!
     @IBOutlet weak var character: UIImageView!
     @IBOutlet weak var element1: UIImageView!
@@ -20,20 +21,90 @@ class FoodDropViewController: UIViewController {
     @IBOutlet weak var element6: UIImageView!
     @IBOutlet weak var element7: UIImageView!
     @IBOutlet weak var element8: UIImageView!
+    @IBOutlet weak var heart1: UIImageView!
+    @IBOutlet weak var heart2: UIImageView!
+    @IBOutlet weak var heart3: UIImageView!
+    @IBOutlet weak var heart4: UIImageView!
+    @IBOutlet weak var finishView: UIView!
+    @IBOutlet weak var finishCashLabel: UILabel!
     
+    @IBAction func playAgain(_ sender: Any) {
+        resetHearts()
+        gameTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(dropElements), userInfo: nil, repeats: true)
+        points = 0
+        finishView.isHidden = true
+        pointsLabel.text = String(points)
+        character.frame.origin.x = CGFloat(50)
+        randomElement(element: element1)
+        randomElement(element: element2)
+        randomElement(element: element3)
+        randomElement(element: element4)
+        randomElement(element: element5)
+        randomElement(element: element6)
+        randomElement(element: element7)
+        randomElement(element: element8)
+        element1.frame.origin.y = 50
+        element2.frame.origin.y = 30
+        element3.frame.origin.y = -20
+        element4.frame.origin.y = -70
+        element5.frame.origin.y = -120
+        element6.frame.origin.y = -170
+        element7.frame.origin.y = -220
+        element8.frame.origin.y = -270
+    }
+    
+    var hearts: Int = 4
     var moveLeftTimer = Timer();
     var moveRightTimer = Timer();
     var points = 0;
+    var gameTimer = Timer()
     
     var foodImages = ["01_water", "02_coffe", "03_banana", "04_oats", "05_bacon", "06_salad", "07_egg", "08_fries", "09_pasta", "10_rice", "11_salami", "12_chicken", "13_steak", "14_energy-drink", "15_vitamins", "16_bcaa", "17_creatine", "18_protein-powder", "19_testosterone", "20_trenbolone", "21_synythol"]
 
+    func updateBalance() {
+        cashLabel.text = "\(String(format: "%.2f", bodybuilder.getCash()))$"
+    }
     
     func dropping(element: UIImageView) {
         if( element.frame.origin.y < 620) {
             element.frame.origin.y += 1
         } else {
+            loseHeart()
             resetElement(element: element)
         }
+    }
+    
+    func loseHeart() {
+        hearts -= 1
+        switch hearts {
+        case 3:
+            heart4.isHidden = true
+        case 2:
+            heart3.isHidden = true
+        case 1:
+            heart2.isHidden = true
+        case 0:
+            heart1.isHidden = true
+            finishGame()
+        default:
+            print("def")
+        }
+    }
+    
+    func resetHearts(){
+        heart1.isHidden = false
+        heart2.isHidden = false
+        heart3.isHidden = false
+        heart4.isHidden = false
+        hearts = 4
+    }
+    
+    func finishGame(){
+        gameTimer.invalidate()
+        finishView.isHidden = false
+        finishCashLabel.text = "You earned \(Float(Float(points) * 0.5))$"
+        bodybuilder.addCash(count: Float(Float(points) * 0.5))
+        updateBalance()
     }
     
     func resetElement(element: UIImageView) {
@@ -78,6 +149,7 @@ class FoodDropViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hearts = 4
         randomElement(element: element1)
         randomElement(element: element2)
         randomElement(element: element3)
@@ -91,7 +163,9 @@ class FoodDropViewController: UIViewController {
         element6.frame.origin.y = -170
         element7.frame.origin.y = -220
         element8.frame.origin.y = -270
-        Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(dropElements), userInfo: nil, repeats: true)
+        updateBalance()
+        character.image = UIImage(named: "\(String(bodybuilder.getImageLevel()))_\(bodybuilder.getImageMood()).png")
+        gameTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(dropElements), userInfo: nil, repeats: true)
     }
 
     override func didReceiveMemoryWarning() {

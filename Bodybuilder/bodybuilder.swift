@@ -145,6 +145,10 @@ class Bodybuilder {
     
     //CASH
     
+    func addCash(count: Float) {
+        cash += count
+    }
+    
     func getCash()-> Float {
         return cash
     }
