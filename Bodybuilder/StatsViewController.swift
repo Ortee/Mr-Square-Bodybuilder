@@ -21,6 +21,7 @@ class StatsViewController: UIViewController {
     @IBOutlet weak var strengthGrowthLabel: UILabel!
     @IBOutlet weak var cashLabel: UILabel!
     @IBOutlet weak var trainingTimeLeft: UILabel!
+    var statsTimer = Timer()
     
     func secondsToHoursMinutesSeconds (seconds : Int) -> String {
         let hours = seconds / 3600
@@ -30,28 +31,27 @@ class StatsViewController: UIViewController {
         return String(format:"%02i:%02i:%02i", hours, mins, secs)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
+    func updateUserData() {
         strengthLabel.text = String(bodybuilder.getExperience())
         cashLabel.text = "\(String(format: "%.2f", bodybuilder.getCash()))$"
         strengthGrowthLabel.text = String(bodybuilder.getExperienceIncreaseValue())
         EnergyLabel.text = "\(String(bodybuilder.getEnergy()))%"
         LevelLabel.text = String(bodybuilder.getLeveL())
         experienceBar.progress = bodybuilder.getPercentExperienceToBar()
-        ExperiencePercentLabel.text = "\(Int(bodybuilder.getPercentExperienceToBar()*100))%"        
+        ExperiencePercentLabel.text = "\(Int(bodybuilder.getPercentExperienceToBar()*100))%"
         energyPercentLabel.text = "\(Int(bodybuilder.getEnergyPercent()))%"
         EnergyBar.progress = bodybuilder.getEnergyPercent()/100
         trainingTimeLeft.text = secondsToHoursMinutesSeconds(seconds: bodybuilder.getEnergy())
-  
-        
         bodybuilderImage.image = UIImage(named: "\(String(bodybuilder.getImageLevel()))_\(bodybuilder.getImageMood()).png")
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        updateUserData()
+        statsTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateUserData), userInfo: nil, repeats: true)
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
 }
