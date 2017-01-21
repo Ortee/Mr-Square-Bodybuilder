@@ -17,6 +17,19 @@ class StatsViewController: UIViewController {
     @IBOutlet weak var experienceBar: UIProgressView!
     @IBOutlet weak var energyPercentLabel: UILabel!
     @IBOutlet weak var EnergyBar: UIProgressView!
+    @IBOutlet weak var strengthLabel: UILabel!
+    @IBOutlet weak var strengthGrowthLabel: UILabel!
+    @IBOutlet weak var cashLabel: UILabel!
+    @IBOutlet weak var trainingTimeLeft: UILabel!
+    
+    func secondsToHoursMinutesSeconds (seconds : Int) -> String {
+        let hours = seconds / 3600
+        let mins = (seconds % 3600) / 60
+        let secs = (seconds % 3600) % 60
+        
+        return String(format:"%02i:%02i:%02i", hours, mins, secs)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -26,15 +39,16 @@ class StatsViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-//        ExpLabel.text = String(bodybuilder.getExperience())
-//        CashLabel.text = "\(String(format: "%.2f", bodybuilder.getCash()))$"
-//        ExpPerMinute.text = String(bodybuilder.getExperienceIncreaseValue())
+        strengthLabel.text = String(bodybuilder.getExperience())
+        cashLabel.text = "\(String(format: "%.2f", bodybuilder.getCash()))$"
+        strengthGrowthLabel.text = String(bodybuilder.getExperienceIncreaseValue())
         EnergyLabel.text = "\(String(bodybuilder.getEnergy()))%"
         LevelLabel.text = String(bodybuilder.getLeveL())
         experienceBar.progress = bodybuilder.getPercentExperienceToBar()
         ExperiencePercentLabel.text = "\(Int(bodybuilder.getPercentExperienceToBar()*100))%"        
         energyPercentLabel.text = "\(Int(bodybuilder.getEnergyPercent()))%"
         EnergyBar.progress = bodybuilder.getEnergyPercent()/100
+        trainingTimeLeft.text = secondsToHoursMinutesSeconds(seconds: bodybuilder.getEnergy())
   
         
         bodybuilderImage.image = UIImage(named: "\(String(bodybuilder.getImageLevel()))_\(bodybuilder.getImageMood()).png")
