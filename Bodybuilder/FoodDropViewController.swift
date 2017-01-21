@@ -102,8 +102,8 @@ class FoodDropViewController: UIViewController {
     func finishGame(){
         gameTimer.invalidate()
         finishView.isHidden = false
-        finishCashLabel.text = "You earned \(Float(Float(points) * 0.5))$"
-        bodybuilder.addCash(count: Float(Float(points) * 0.5))
+        finishCashLabel.text = "You earned \(Float(Float(points) * 0.1))$"
+        bodybuilder.addCash(count: Float(Float(points) * 0.1))
         updateBalance()
     }
     

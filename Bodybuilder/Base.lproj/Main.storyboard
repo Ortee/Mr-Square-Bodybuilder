@@ -450,22 +450,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIF-uM-ezN">
-                                <rect key="frame" x="0.0" y="80" width="188" height="539"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="moveLeftTouchDown:" destination="ul7-po-YKr" eventType="touchDown" id="U4D-ty-qD9"/>
-                                    <action selector="moveLeftTouchUp:" destination="ul7-po-YKr" eventType="touchUpInside" id="V2K-sO-64F"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="moE-bZ-oAQ">
-                                <rect key="frame" x="187" y="85" width="188" height="534"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="moveRightTouchDown:" destination="ul7-po-YKr" eventType="touchDown" id="tDr-LP-nag"/>
-                                    <action selector="moveRightTouchUp:" destination="ul7-po-YKr" eventType="touchUpInside" id="9sD-Ee-SdS"/>
-                                </connections>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1_happy" translatesAutoresizingMaskIntoConstraints="NO" id="Hdc-hs-PR0">
                                 <rect key="frame" x="100" y="537" width="183" height="73"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -502,6 +486,22 @@
                                 <rect key="frame" x="317" y="28" width="55" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="moE-bZ-oAQ">
+                                <rect key="frame" x="187" y="85" width="188" height="534"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="moveRightTouchDown:" destination="ul7-po-YKr" eventType="touchDown" id="tDr-LP-nag"/>
+                                    <action selector="moveRightTouchUp:" destination="ul7-po-YKr" eventType="touchUpInside" id="9sD-Ee-SdS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIF-uM-ezN">
+                                <rect key="frame" x="0.0" y="80" width="188" height="538"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="moveLeftTouchDown:" destination="ul7-po-YKr" eventType="touchDown" id="U4D-ty-qD9"/>
+                                    <action selector="moveLeftTouchUp:" destination="ul7-po-YKr" eventType="touchUpInside" id="V2K-sO-64F"/>
+                                </connections>
+                            </button>
                             <view clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="472-yH-Eke">
                                 <rect key="frame" x="16" y="20" width="346" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
