@@ -49,9 +49,10 @@ func getIntRecord (recordName: String) -> Int {
     do {
         let searchResults = try getContext().fetch(fetchRequest)
         return searchResults.first?.value(forKey: recordName) as! Int
+
     } catch {
     }
-    return -1
+    return 0
 }
 
 func getFloatRecord (recordName: String) -> Float {
@@ -62,7 +63,7 @@ func getFloatRecord (recordName: String) -> Float {
         return searchResults.first?.value(forKey: recordName) as! Float
     } catch {
     }
-    return -1.00
+    return 0.00
 }
 
 func updateSingleIntegerRecord(value: Int, recordName: String) {

@@ -21,6 +21,9 @@ class Bodybuilder {
     var cash: Float = 0.00
     var level: Int = 1
     var isSad: Bool = false;
+    var click_count: Int = 0
+    var time_on_gym: Int = 0
+    var money_spent: Int = 0
     
     init() {
         print("BODYBUILDER INIT")
@@ -163,6 +166,25 @@ class Bodybuilder {
         return false
     }
     
+    func saveData() {
+        print("BODYBUILDER SAVED")
+        updateSingleIntegerRecord(value: click_count, recordName: "click_count")
+        updateSingleIntegerRecord(value: experience, recordName: "strength")
+        updateSingleIntegerRecord(value: experienceIncreaseValue, recordName: "strength_growth")
+        updateSingleIntegerRecord(value: time_on_gym, recordName: "time_on_gym")
+        updateSingleIntegerRecord(value: money_spent, recordName: "money_spent")
+        updateSingleFloatRecord(value: cash, recordName: "coins")
+    }
+    
+    func loadData() {
+        print("BODYBUILDER LOADED")
+        cash = getFloatRecord(recordName: "coins")
+        experience = getIntRecord(recordName: "strength")
+        experienceIncreaseValue = getIntRecord(recordName: "strength_growth")
+        time_on_gym = getIntRecord(recordName: "time_on_gym")
+        money_spent = getIntRecord(recordName: "money_spent")
+        click_count = getIntRecord(recordName: "click_count")
+    }
     
 }
 

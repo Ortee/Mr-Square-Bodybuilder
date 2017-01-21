@@ -45,8 +45,14 @@ class StatsViewController: UIViewController {
         bodybuilderImage.image = UIImage(named: "\(String(bodybuilder.getImageLevel()))_\(bodybuilder.getImageMood()).png")
     }
     
+    func saveDataTimerSchedule() {
+        bodybuilder.saveData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        bodybuilder.loadData()
+        Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(saveDataTimerSchedule), userInfo: nil, repeats: true)
         updateUserData()
         statsTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateUserData), userInfo: nil, repeats: true)
     }
