@@ -42,6 +42,5 @@ class GameController: UIViewController {
         audioPlayer.play()
         bodybuilder.increaseCash()
         updateInfo()
-        bodybuilder.increaseExperiencePerSecond()
     }
 }
