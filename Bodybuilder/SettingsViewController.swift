@@ -25,10 +25,23 @@ class SettingsViewController: UIViewController {
     
     @IBAction func saveNickname(_ sender: Any) {
         bodybuilder.setNickname(_nickname: nicknameFiled.text!)
+        let nicknameAlert = UIAlertController(title: "SUCCESS", message: "Nickname has been changed to \(nicknameFiled.text!).", preferredStyle: UIAlertControllerStyle.alert)
+        nicknameAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(nicknameAlert, animated: true, completion: nil)
     }
 
     @IBAction func restartButton(_ sender: Any) {
-        bodybuilder.restartData()
+        let restartAlert = UIAlertController(title: "Restart", message: "Are you sure? All data will be lost.", preferredStyle: UIAlertControllerStyle.alert)
+        
+        restartAlert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
+            bodybuilder.restartData()
+        }))
+        
+        restartAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        present(restartAlert, animated: true, completion: nil)
+        
+        
     }
     /*
     // MARK: - Navigation

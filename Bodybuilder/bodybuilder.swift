@@ -204,7 +204,7 @@ class Bodybuilder {
     func restartData() {
         updateSingleIntegerRecord(value: 0, recordName: "click_count")
         updateSingleIntegerRecord(value: 0, recordName: "strength")
-        updateSingleIntegerRecord(value: 0, recordName: "strength_growth")
+        updateSingleIntegerRecord(value: 1, recordName: "strength_growth")
         updateSingleIntegerRecord(value: 0, recordName: "time_on_gym")
         updateSingleIntegerRecord(value: 0, recordName: "money_spend")
         updateSingleFloatRecord(value: 0.00, recordName: "coins")
@@ -217,6 +217,7 @@ class Bodybuilder {
         cash = 0.00
         money_spend = 0
         level = 1
+        experienceIncreaseValue = 1
     }
     
 }
