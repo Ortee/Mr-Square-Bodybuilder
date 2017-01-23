@@ -187,6 +187,7 @@ class FoodDropViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        soundtrackPlayer.numberOfLoops = -1
         soundtrackPlayer.play()
     }
     
