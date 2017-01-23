@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		667B9FF71E1F17F4006EFAD2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667B9FF61E1F17F4006EFAD2 /* MapViewController.swift */; };
 		667B9FF91E1F1E98006EFAD2 /* position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667B9FF81E1F1E98006EFAD2 /* position.swift */; };
+		669E3BD21E36C54F00DC6A18 /* game-eat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 669E3BD01E36C54F00DC6A18 /* game-eat.wav */; };
+		669E3BD31E36C54F00DC6A18 /* game-soundtrack.wav in Resources */ = {isa = PBXBuildFile; fileRef = 669E3BD11E36C54F00DC6A18 /* game-soundtrack.wav */; };
 		66E3C1AB1E2F4E0D00A83C2C /* ViewControllerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E3C1AA1E2F4E0D00A83C2C /* ViewControllerTableViewCell.swift */; };
 		66E3C1AD1E2F810100A83C2C /* shop.wav in Resources */ = {isa = PBXBuildFile; fileRef = 66E3C1AC1E2F810100A83C2C /* shop.wav */; };
 		66E3C1B01E2F889B00A83C2C /* coin.wav in Resources */ = {isa = PBXBuildFile; fileRef = 66E3C1AF1E2F889B00A83C2C /* coin.wav */; };
@@ -57,6 +59,8 @@
 		57D213A8D2F297F341BE0270 /* Pods-Bodybuilder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bodybuilder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bodybuilder/Pods-Bodybuilder.debug.xcconfig"; sourceTree = "<group>"; };
 		667B9FF61E1F17F4006EFAD2 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		667B9FF81E1F1E98006EFAD2 /* position.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = position.swift; sourceTree = "<group>"; };
+		669E3BD01E36C54F00DC6A18 /* game-eat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "game-eat.wav"; sourceTree = "<group>"; };
+		669E3BD11E36C54F00DC6A18 /* game-soundtrack.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "game-soundtrack.wav"; sourceTree = "<group>"; };
 		66DDE79B1E29A3840014985E /* Location.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Location.gpx; sourceTree = "<group>"; };
 		66E3C1791E2F345B00A83C2C /* Tauro.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Tauro.gpx; sourceTree = "<group>"; };
 		66E3C17B1E2F366800A83C2C /* TauroClose.gpx */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = TauroClose.gpx; sourceTree = "<group>"; };
@@ -133,6 +137,8 @@
 		66E3C1AE1E2F886A00A83C2C /* sounds */ = {
 			isa = PBXGroup;
 			children = (
+				669E3BD01E36C54F00DC6A18 /* game-eat.wav */,
+				669E3BD11E36C54F00DC6A18 /* game-soundtrack.wav */,
 				66E3C1B31E2F8DAC00A83C2C /* error.wav */,
 				66E3C1B11E2F8D4400A83C2C /* level_up.wav */,
 				66E3C1AF1E2F889B00A83C2C /* coin.wav */,
@@ -347,6 +353,8 @@
 				66E3C1B21E2F8D4400A83C2C /* level_up.wav in Resources */,
 				66E3C1B41E2F8DAC00A83C2C /* error.wav in Resources */,
 				66EE8FBF1E1F0DB70079B172 /* Podfile in Resources */,
+				669E3BD21E36C54F00DC6A18 /* game-eat.wav in Resources */,
+				669E3BD31E36C54F00DC6A18 /* game-soundtrack.wav in Resources */,
 				66F44E791E24E14200F5E290 /* style.json in Resources */,
 				8DE983861E034377001BFC7A /* Main.storyboard in Resources */,
 			);

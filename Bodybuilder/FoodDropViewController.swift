@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import AVFoundation
 
 class FoodDropViewController: UIViewController {
+    
+    var eatPlayer = AVAudioPlayer()
+    var soundtrackPlayer = AVAudioPlayer()
+    
 
     @IBOutlet weak var cashLabel: UILabel!
     @IBOutlet weak var pointsLabel: UILabel!
@@ -87,7 +92,7 @@ class FoodDropViewController: UIViewController {
             heart1.isHidden = true
             finishGame()
         default:
-            print("def")
+            break
         }
     }
     
@@ -143,6 +148,13 @@ class FoodDropViewController: UIViewController {
                 resetElement(element: food)
                 points += 1
                 pointsLabel.text = String(points)
+                do {
+                    eatPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "game-eat", ofType: "wav")!))
+                }
+                catch{
+                    print(error)
+                }
+                eatPlayer.play()
             }
         }
     }
@@ -166,6 +178,21 @@ class FoodDropViewController: UIViewController {
         updateBalance()
         character.image = UIImage(named: "\(String(bodybuilder.getImageLevel()))_\(bodybuilder.getImageMood()).png")
         gameTimer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(dropElements), userInfo: nil, repeats: true)
+        do {
+            soundtrackPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "game-soundtrack", ofType: "wav")!))
+        }
+        catch{
+            print(error)
+        }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        soundtrackPlayer.play()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        finishGame()
+        soundtrackPlayer.stop()
     }
 
     override func didReceiveMemoryWarning() {
