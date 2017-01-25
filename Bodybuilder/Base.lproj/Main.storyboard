@@ -1067,35 +1067,101 @@
             </objects>
             <point key="canvasLocation" x="1661.5999999999999" y="868.51574212893559"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="EdX-Pr-nOX">
+        <!--Ranking-->
+        <scene sceneID="JuE-dp-4Wr">
             <objects>
-                <viewController id="CQE-aY-vZy" customClass="OnlineViewController" customModule="Bodybuilder" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Ranking" id="AST-zi-jl8" customClass="RankingViewController" customModule="Bodybuilder" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="udu-Rd-alu"/>
-                        <viewControllerLayoutGuide type="bottom" id="KVq-6y-XBF"/>
+                        <viewControllerLayoutGuide type="top" id="0O1-Bv-9ob"/>
+                        <viewControllerLayoutGuide type="bottom" id="EEd-Sf-nf2"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="akM-Wl-qYf">
+                    <view key="view" contentMode="scaleToFill" id="M7A-lx-RaY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9F-UV-L26">
-                                <rect key="frame" x="116" y="279" width="143" height="108"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AQP-U8-9Nb">
+                                <rect key="frame" x="16" y="106" width="343" height="504"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.94901960780000005" green="0.3921568627" blue="0.098039215690000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="0.4549019608" green="0.31372549020000001" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" focusStyle="custom" rowHeight="50" id="KFl-wD-zcu" customClass="RankingTableViewCell" customModule="Bodybuilder" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KFl-wD-zcu" id="40v-G0-kNU">
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="49"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZ9-VO-bKJ">
+                                                    <rect key="frame" x="60" y="2" width="275" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" red="0.98823529409999999" green="0.96470588239999999" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bp8-xQ-9DX">
+                                                    <rect key="frame" x="8" y="14" width="47" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <color key="textColor" red="0.98823529409999999" green="0.96470588239999999" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tlb-Kv-GQ3">
+                                                    <rect key="frame" x="60" y="24" width="140" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                    <color key="textColor" red="0.98823529409999999" green="0.96470588239999999" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r62-Z2-V1D">
+                                                    <rect key="frame" x="173" y="13" width="162" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                                    <color key="textColor" red="0.98823529409999999" green="0.96470588239999999" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="level" destination="Tlb-Kv-GQ3" id="WG5-Pj-zqb"/>
+                                            <outlet property="name" destination="DZ9-VO-bKJ" id="N4w-kN-fKI"/>
+                                            <outlet property="place" destination="bp8-xQ-9DX" id="pMV-Yx-PWh"/>
+                                            <outlet property="strength" destination="r62-Z2-V1D" id="56R-uw-JaY"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                                 <connections>
-                                    <action selector="refresh:" destination="CQE-aY-vZy" eventType="touchUpInside" id="mfT-bm-9Qq"/>
+                                    <outlet property="dataSource" destination="AST-zi-jl8" id="TxB-L5-Om5"/>
+                                    <outlet property="delegate" destination="AST-zi-jl8" id="vPv-Xf-knH"/>
                                 </connections>
-                            </button>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TOP PLAYERS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c9S-46-kk0">
+                                <rect key="frame" x="81" y="28" width="213" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                                <color key="textColor" red="0.98823529409999999" green="0.96470588239999999" blue="0.99215686270000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ranking_2" translatesAutoresizingMaskIntoConstraints="NO" id="5Mk-s6-dZA">
+                                <rect key="frame" x="297" y="20" width="62" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ranking_1" translatesAutoresizingMaskIntoConstraints="NO" id="BA6-MZ-iNS">
+                                <rect key="frame" x="16" y="20" width="65" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.20000000000000001" green="0.24313725489999999" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="WJ6-9w-kOZ"/>
+                    <tabBarItem key="tabBarItem" title="Ranking" id="fGM-dS-WqT"/>
+                    <connections>
+                        <outlet property="rankingTableView" destination="AQP-U8-9Nb" id="6Ce-Pv-M0E"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="sfH-m1-D7R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B0i-JF-hbg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2454" y="869"/>
+            <point key="canvasLocation" x="2479.1999999999998" y="871.21439280359823"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="SFn-YW-bFQ">
@@ -1115,7 +1181,7 @@
                         <segue destination="VK6-qm-3TN" kind="relationship" relationship="viewControllers" id="fbz-wM-85U"/>
                         <segue destination="vzd-M6-j5r" kind="relationship" relationship="viewControllers" id="jal-kV-MYI"/>
                         <segue destination="E6T-i2-aQh" kind="relationship" relationship="viewControllers" id="YyM-SP-l6w"/>
-                        <segue destination="CQE-aY-vZy" kind="relationship" relationship="viewControllers" id="vWF-ko-jKe"/>
+                        <segue destination="AST-zi-jl8" kind="relationship" relationship="viewControllers" id="FN8-2s-1ck"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jnb-2t-y7a" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1519,6 +1585,8 @@
         <image name="dumbbell2" width="512" height="512"/>
         <image name="heart" width="512" height="512"/>
         <image name="pizza" width="256" height="256"/>
+        <image name="ranking_1" width="512" height="512"/>
+        <image name="ranking_2" width="512" height="512"/>
         <image name="shop_1" width="512" height="512"/>
         <image name="sport-shoe" width="512" height="512"/>
     </resources>

@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6662176D1E3848110000FE09 /* OnlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6662176C1E3848110000FE09 /* OnlineViewController.swift */; };
+		6607AC261E38E2B900AFD5D1 /* RankingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6607AC251E38E2B900AFD5D1 /* RankingViewController.swift */; };
+		6607AC281E38E40E00AFD5D1 /* RankingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6607AC271E38E40E00AFD5D1 /* RankingTableViewCell.swift */; };
 		667B9FF71E1F17F4006EFAD2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667B9FF61E1F17F4006EFAD2 /* MapViewController.swift */; };
 		667B9FF91E1F1E98006EFAD2 /* position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667B9FF81E1F1E98006EFAD2 /* position.swift */; };
 		669E3BD21E36C54F00DC6A18 /* game-eat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 669E3BD01E36C54F00DC6A18 /* game-eat.wav */; };
@@ -58,7 +59,8 @@
 
 /* Begin PBXFileReference section */
 		57D213A8D2F297F341BE0270 /* Pods-Bodybuilder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bodybuilder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bodybuilder/Pods-Bodybuilder.debug.xcconfig"; sourceTree = "<group>"; };
-		6662176C1E3848110000FE09 /* OnlineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineViewController.swift; sourceTree = "<group>"; };
+		6607AC251E38E2B900AFD5D1 /* RankingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingViewController.swift; sourceTree = "<group>"; };
+		6607AC271E38E40E00AFD5D1 /* RankingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankingTableViewCell.swift; sourceTree = "<group>"; };
 		667B9FF61E1F17F4006EFAD2 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		667B9FF81E1F1E98006EFAD2 /* position.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = position.swift; sourceTree = "<group>"; };
 		669E3BD01E36C54F00DC6A18 /* game-eat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "game-eat.wav"; sourceTree = "<group>"; };
@@ -215,7 +217,8 @@
 				8D1EDC521E33AA4D00AAB727 /* FoodDropViewController.swift */,
 				8D1EDC541E340CD500AAB727 /* SettingsViewController.swift */,
 				8D1EDC561E341FE300AAB727 /* AchievementsViewController.swift */,
-				6662176C1E3848110000FE09 /* OnlineViewController.swift */,
+				6607AC251E38E2B900AFD5D1 /* RankingViewController.swift */,
+				6607AC271E38E40E00AFD5D1 /* RankingTableViewCell.swift */,
 			);
 			path = Bodybuilder;
 			sourceTree = "<group>";
@@ -434,14 +437,15 @@
 			files = (
 				8DE983811E034377001BFC7A /* AppDelegate.swift in Sources */,
 				8DA97B0C1E1DE6C200565D2B /* ShopViewController.swift in Sources */,
+				6607AC281E38E40E00AFD5D1 /* RankingTableViewCell.swift in Sources */,
 				8D81BEEC1E1EE037009A54AD /* gym.swift in Sources */,
 				8D1EDC531E33AA4D00AAB727 /* FoodDropViewController.swift in Sources */,
 				8D1EDC501E33077700AAB727 /* data.swift in Sources */,
+				6607AC261E38E2B900AFD5D1 /* RankingViewController.swift in Sources */,
 				8D5EE7C91E26C87500EAA6F1 /* GameController.swift in Sources */,
 				8D1EDC511E33077700AAB727 /* data.xcdatamodeld in Sources */,
 				8DA97B081E1DD95A00565D2B /* StatsViewController.swift in Sources */,
 				8D4A11BC1E1D5F29009E6916 /* bodybuilder.swift in Sources */,
-				6662176D1E3848110000FE09 /* OnlineViewController.swift in Sources */,
 				667B9FF91E1F1E98006EFAD2 /* position.swift in Sources */,
 				8D1EDC551E340CD500AAB727 /* SettingsViewController.swift in Sources */,
 				667B9FF71E1F17F4006EFAD2 /* MapViewController.swift in Sources */,
