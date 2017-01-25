@@ -48,30 +48,19 @@ class RankingViewController: UIViewController, UITableViewDataSource, UITableVie
         cell.level.text = "Level \(playersArray[indexPath.row].level)"
         return (cell)
     }
-    func printArray() {
-        print("printuje")
-        for elem in playersArray {
-            print("elo\(elem)")
-        }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        playersArray = httpRequest.getPlayers(players: self.playersArray, tableView: self.rankingTableView)
 
-//        Alamofire.request("http://localhost:3000/api/users").responseJSON { response in
-//            debugPrint(response)
-//            
-//            let json = JSON(data: response.data!)
-//            self.playersArray.removeAll()
-//            var playerPlace = 0
-//            for (index,subJson):(String, JSON) in json {
-//                playerPlace += 1
-//                self.playersArray.append(Player(id: index, device_uuid: String(describing: subJson["device_uuid"]), nickname: String(describing: subJson["nickname"]), strength: String(describing: subJson["strength"]), level: String(describing: subJson["level"]), place: playerPlace))
-//            }
-//            DispatchQueue.main.async{
-//                self.rankingTableView.reloadData()
-//            }
-//        }
+    override func viewWillAppear(_ animated: Bool) {
+        let myGroup = DispatchGroup()
+        myGroup.enter()
+        httpRequest.getPlayers(players: playersArray, tableView: rankingTableView, myGroup: myGroup)
+        myGroup.notify(queue: DispatchQueue.main, execute: {
+            self.playersArray = httpRequest.players
+            DispatchQueue.main.async{
+                self.playersArray = httpRequest.players
+                self.rankingTableView.reloadData()
+            }
+        })
+
     }
     
     override func viewDidLoad() {

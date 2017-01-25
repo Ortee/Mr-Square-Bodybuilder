@@ -12,11 +12,12 @@ import SwiftyJSON
 
 
 class Http {
-
-    func getPlayers(players: [User], tableView: UITableView) -> [User]{
+    public var players: [User] = [];
+    
+    func getPlayers(players: [User], tableView: UITableView, myGroup: DispatchGroup){
         
         var playersArray = players
-        Alamofire.request("http://localhost:3000/api/users").responseJSON { response in
+        Alamofire.request("http://orteedev.pl:3000/api/users").responseJSON { response in
             debugPrint(response)
             
             let json = JSON(data: response.data!)
@@ -27,11 +28,11 @@ class Http {
                 playersArray.append(User(id: index, device_uuid: String(describing: subJson["device_uuid"]), nickname: String(describing: subJson["nickname"]), strength: String(describing: subJson["strength"]), level: String(describing: subJson["level"]), place: playerPlace))
             }
             DispatchQueue.main.async{
-                print("refreszt")
                 tableView.reloadData()
             }
+            self.players = playersArray
+            myGroup.leave()
         }
-        return(playersArray)
     }
 }
 var httpRequest: Http = Http()
