@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6662176D1E3848110000FE09 /* OnlineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6662176C1E3848110000FE09 /* OnlineViewController.swift */; };
 		667B9FF71E1F17F4006EFAD2 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667B9FF61E1F17F4006EFAD2 /* MapViewController.swift */; };
 		667B9FF91E1F1E98006EFAD2 /* position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 667B9FF81E1F1E98006EFAD2 /* position.swift */; };
 		669E3BD21E36C54F00DC6A18 /* game-eat.wav in Resources */ = {isa = PBXBuildFile; fileRef = 669E3BD01E36C54F00DC6A18 /* game-eat.wav */; };
@@ -18,6 +19,7 @@
 		66E3C1B41E2F8DAC00A83C2C /* error.wav in Resources */ = {isa = PBXBuildFile; fileRef = 66E3C1B31E2F8DAC00A83C2C /* error.wav */; };
 		66EE8FBF1E1F0DB70079B172 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 66EE8FBE1E1F0DB70079B172 /* Podfile */; };
 		66F44E791E24E14200F5E290 /* style.json in Resources */ = {isa = PBXBuildFile; fileRef = 66F44E781E24E14200F5E290 /* style.json */; };
+		79547894C2269FF8875AA0F7 /* Pods_Bodybuilder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D42FF27D0CA481920A756985 /* Pods_Bodybuilder.framework */; };
 		8D1EDC501E33077700AAB727 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1EDC4D1E33077700AAB727 /* data.swift */; };
 		8D1EDC511E33077700AAB727 /* data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8D1EDC4E1E33077700AAB727 /* data.xcdatamodeld */; };
 		8D1EDC531E33AA4D00AAB727 /* FoodDropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1EDC521E33AA4D00AAB727 /* FoodDropViewController.swift */; };
@@ -35,7 +37,6 @@
 		8DE9838B1E034377001BFC7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE983891E034377001BFC7A /* LaunchScreen.storyboard */; };
 		8DE983961E034377001BFC7A /* BodybuilderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE983951E034377001BFC7A /* BodybuilderTests.swift */; };
 		8DE983A11E034377001BFC7A /* BodybuilderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE983A01E034377001BFC7A /* BodybuilderUITests.swift */; };
-		FDB9A54F4AD60ABE7D73E715 /* libPods-Bodybuilder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FD9BA6F941656FBCABCCCB07 /* libPods-Bodybuilder.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 
 /* Begin PBXFileReference section */
 		57D213A8D2F297F341BE0270 /* Pods-Bodybuilder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bodybuilder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Bodybuilder/Pods-Bodybuilder.debug.xcconfig"; sourceTree = "<group>"; };
+		6662176C1E3848110000FE09 /* OnlineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnlineViewController.swift; sourceTree = "<group>"; };
 		667B9FF61E1F17F4006EFAD2 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		667B9FF81E1F1E98006EFAD2 /* position.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = position.swift; sourceTree = "<group>"; };
 		669E3BD01E36C54F00DC6A18 /* game-eat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = "game-eat.wav"; sourceTree = "<group>"; };
@@ -94,8 +96,8 @@
 		8DE9839C1E034377001BFC7A /* BodybuilderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BodybuilderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DE983A01E034377001BFC7A /* BodybuilderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodybuilderUITests.swift; sourceTree = "<group>"; };
 		8DE983A21E034377001BFC7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D42FF27D0CA481920A756985 /* Pods_Bodybuilder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bodybuilder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E12EB7C4457208740C1CBCEF /* Pods-Bodybuilder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bodybuilder.release.xcconfig"; path = "Pods/Target Support Files/Pods-Bodybuilder/Pods-Bodybuilder.release.xcconfig"; sourceTree = "<group>"; };
-		FD9BA6F941656FBCABCCCB07 /* libPods-Bodybuilder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Bodybuilder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,7 +106,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D81BEEA1E1EB4EC009A54AD /* CoreLocation.framework in Frameworks */,
-				FDB9A54F4AD60ABE7D73E715 /* libPods-Bodybuilder.a in Frameworks */,
+				79547894C2269FF8875AA0F7 /* Pods_Bodybuilder.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,7 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				8D81BEE91E1EB4EB009A54AD /* CoreLocation.framework */,
-				FD9BA6F941656FBCABCCCB07 /* libPods-Bodybuilder.a */,
+				D42FF27D0CA481920A756985 /* Pods_Bodybuilder.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -213,6 +215,7 @@
 				8D1EDC521E33AA4D00AAB727 /* FoodDropViewController.swift */,
 				8D1EDC541E340CD500AAB727 /* SettingsViewController.swift */,
 				8D1EDC561E341FE300AAB727 /* AchievementsViewController.swift */,
+				6662176C1E3848110000FE09 /* OnlineViewController.swift */,
 			);
 			path = Bodybuilder;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				8D1EDC511E33077700AAB727 /* data.xcdatamodeld in Sources */,
 				8DA97B081E1DD95A00565D2B /* StatsViewController.swift in Sources */,
 				8D4A11BC1E1D5F29009E6916 /* bodybuilder.swift in Sources */,
+				6662176D1E3848110000FE09 /* OnlineViewController.swift in Sources */,
 				667B9FF91E1F1E98006EFAD2 /* position.swift in Sources */,
 				8D1EDC551E340CD500AAB727 /* SettingsViewController.swift in Sources */,
 				667B9FF71E1F17F4006EFAD2 /* MapViewController.swift in Sources */,
