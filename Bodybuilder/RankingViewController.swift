@@ -11,19 +11,20 @@ import SwiftyJSON
 
 import UIKit
 
+struct User {
+    var id: String
+    var device_uuid: String
+    var nickname: String
+    var strength: String
+    var level: String
+    var place: Int
+}
+
+
 class RankingViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var rankingTableView: UITableView!
-    
-    struct Player {
-        var id: String
-        var device_uuid: String
-        var nickname: String
-        var strength: String
-        var level: String
-        var place: Int
-    }
-    
-    var playersArray = [Player]()
+
+    var playersArray = [User]()
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         tableView.backgroundColor = UIColor(red: 51/255, green: 62/255, blue: 79/255, alpha: 1.0)
@@ -47,22 +48,19 @@ class RankingViewController: UIViewController, UITableViewDataSource, UITableVie
         cell.level.text = "Level \(playersArray[indexPath.row].level)"
         return (cell)
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
-        Alamofire.request("http://localhost:3000/api/users").responseJSON { response in
-            debugPrint(response)
-            
-            let json = JSON(data: response.data!)
-            self.playersArray.removeAll()
-            var playerPlace = 0
-            for (index,subJson):(String, JSON) in json {
-                playerPlace += 1
-                self.playersArray.append(Player(id: index, device_uuid: String(describing: subJson["device_uuid"]), nickname: String(describing: subJson["nickname"]), strength: String(describing: subJson["strength"]), level: String(describing: subJson["level"]), place: playerPlace))
-            }
+        let myGroup = DispatchGroup()
+        myGroup.enter()
+        httpRequest.getPlayers(players: playersArray, tableView: rankingTableView, myGroup: myGroup)
+        myGroup.notify(queue: DispatchQueue.main, execute: {
+            self.playersArray = httpRequest.players
             DispatchQueue.main.async{
+                self.playersArray = httpRequest.players
                 self.rankingTableView.reloadData()
             }
-        }
+        })
+
     }
     
     override func viewDidLoad() {
