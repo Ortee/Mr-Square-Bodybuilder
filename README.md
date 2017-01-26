@@ -5,29 +5,29 @@
 
 # <img src="http://tech.orteedev.pl/bodybuilder-img/pizza.png" width="30" height="32" /> STATS
 
-<img src="http://tech.orteedev.pl/bodybuilder-img/screenshots/IMG_0368.PNG" width="200" height="320" />
+<img src="http://tech.orteedev.pl/bodybuilder-img/screenshots/IMG_0368.PNG" width="200" height="350" />
 
 # <img src="http://tech.orteedev.pl/bodybuilder-img/battery.png" width="30" height="32" /> MAP
 
-<img src="http://tech.orteedev.pl/bodybuilder-img/screenshots/screenshots/IMG_1077.PNG" width="200" height="320" />
-<img src="http://tech.orteedev.pl/bodybuilder-img/screenshots/screenshots/IMG_1076.PNG" width="200" height="320" />
-<img src="http://tech.orteedev.pl/bodybuilder-img/screenshots/screenshots/IMG_1078.PNG" width="200" height="320" />
-<img src="http://tech.orteedev.pl/bodybuilder-img/screenshots/screenshots/IMG_1079.PNG" width="200" height="320" />
+<img src="http://tech.orteedev.pl/bodybuilder-img/screenshots/screenshots/IMG_1077.PNG" width="200" height="350" />
+<img src="http://tech.orteedev.pl/bodybuilder-img/screenshots/screenshots/IMG_1076.PNG" width="200" height="350" />
+<img src="http://tech.orteedev.pl/bodybuilder-img/screenshots/screenshots/IMG_1078.PNG" width="200" height="350" />
+<img src="http://tech.orteedev.pl/bodybuilder-img/screenshots/screenshots/IMG_1079.PNG" width="200" height="350" />
 
 # <img src="http://tech.orteedev.pl/bodybuilder-img/shop_64.png" width="30" height="32" /> SHOP
 
-<img src="http://tech.orteedev.pl/bodybuilder-img/screenshots/IMG_0369.PNG" width="200" height="320" />
-<img src="http://tech.orteedev.pl/bodybuilder-img/screenshots/IMG_0370.PNG" width="200" height="320" />
-<img src="http://tech.orteedev.pl/bodybuilder-img/screenshots/IMG_0371.PNG" width="200" height="320" />
+<img src="http://tech.orteedev.pl/bodybuilder-img/screenshots/IMG_0369.PNG" width="200" height="350" />
+<img src="http://tech.orteedev.pl/bodybuilder-img/screenshots/IMG_0370.PNG" width="200" height="350" />
+<img src="http://tech.orteedev.pl/bodybuilder-img/screenshots/IMG_0371.PNG" width="200" height="350" />
 # <img src="http://tech.orteedev.pl/bodybuilder-img/coin_1.png" width="30" height="32" /> CLICKER
-<img src="http://tech.orteedev.pl/bodybuilder-img/screenshots/IMG_0372.PNG" width="200" height="320" />
+<img src="http://tech.orteedev.pl/bodybuilder-img/screenshots/IMG_0372.PNG" width="200" height="350" />
 # <img src="http://tech.orteedev.pl/bodybuilder-img/pizza.png" width="30" height="32" /> FOOD DROP
-<img src="http://tech.orteedev.pl/bodybuilder-img/screenshots/IMG_0373.PNG" width="200" height="320" />
+<img src="http://tech.orteedev.pl/bodybuilder-img/screenshots/IMG_0373.PNG" width="200" height="350" />
 # <img src="http://tech.orteedev.pl/bodybuilder-img/pizza.png" width="30" height="32" /> RANKING
-<img src="http://tech.orteedev.pl/bodybuilder-img/screenshots/IMG_0374.PNG" width="200" height="320" />
+<img src="http://tech.orteedev.pl/bodybuilder-img/screenshots/IMG_0374.PNG" width="200" height="350" />
 
 # <img src="http://tech.orteedev.pl/bodybuilder-img/cup.png" width="30" height="32" /> ACHIEVEMENTS
-<img src="http://tech.orteedev.pl/bodybuilder-img/screenshots/IMG_0376.PNG" width="200" height="320" />
+<img src="http://tech.orteedev.pl/bodybuilder-img/screenshots/IMG_0376.PNG" width="200" height="350" />
 
 
 # CHARACTER LEVELS
