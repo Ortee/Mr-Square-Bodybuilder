@@ -86,13 +86,13 @@ class AchievementsViewController: UIViewController {
         if(bodybuilder.getLeveL() > 200) {
            unlock(unlock: true, QuestionMark: QuestionMark_Level_200, Label: Label_Level_200, Image: Image_Level_200)
         }
-        if(bodybuilder.getExperienceIncreaseValue() > 100) {
+        if(bodybuilder.getStrengthGrowth() > 100) {
             unlock(unlock: true, QuestionMark: QuestionMark_Strength_100, Label: Label_Strength_100, Image: Image_Strength_100)
         }
-        if(bodybuilder.getExperienceIncreaseValue() > 500) {
+        if(bodybuilder.getStrengthGrowth() > 500) {
             unlock(unlock: true, QuestionMark: QuestionMark_Strenght_500, Label: Label_Strength_500, Image: Image_Strength_500)
         }
-        if(bodybuilder.getExperienceIncreaseValue() > 1000) {
+        if(bodybuilder.getStrengthGrowth() > 1000) {
             unlock(unlock: true, QuestionMark: QuestionMark_Strength_1000, Label: Label_Strength_1000, Image: Image_Strength_1000)
         }
         if(bodybuilder.getCash() > 1.00) {

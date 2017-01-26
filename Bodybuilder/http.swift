@@ -51,7 +51,7 @@ class Http {
         let params: Parameters = [
             "device_uuid": "\(UIDevice.current.identifierForVendor!.uuidString)",
             "level": bodybuilder.getLeveL(),
-            "strength": bodybuilder.getExperience(),
+            "strength": bodybuilder.getStrength(),
             "nickname": "Player\(random)"
         ]
 
@@ -66,7 +66,7 @@ class Http {
         let params: Parameters = [
             "device_uuid": "\(uuid)",
             "level": bodybuilder.getLeveL(),
-            "strength": bodybuilder.getExperience(),
+            "strength": bodybuilder.getStrength(),
             "nickname": bodybuilder.getNickname()
         ]
         

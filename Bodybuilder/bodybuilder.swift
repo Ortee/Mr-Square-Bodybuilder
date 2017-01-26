@@ -12,24 +12,17 @@ import UIKit
 
 class Bodybuilder {
     var audioPlayer = AVAudioPlayer()
-    var experience: Int = 0
-    var experienceIncreaseValue = 1
-    var cashIncreaseValue: Float = 0.05
+    var strength: Int = 0
+    var strengthGrowth = 1
     let CIRCLE_MAX_RADIUS: Double = 0.0004
     let maxEnergy = 10800
     var energy: Int = 10800
     var cash: Float = 0.00
     var level: Int = 1
     var isSad: Bool = false;
-    var click_count: Int = 0
-    var time_on_gym: Int = 0
-    var money_spend: Int = 0
     var nickname: String = "Player"
     
     init() {
-        
-        print("BODYBUILDER INIT")
-        print("DEVICE UUID: \(UIDevice.current.identifierForVendor!.uuidString)")
         let myGroup = DispatchGroup()
         myGroup.enter()
         httpRequest.getPlayer(uuid: UIDevice.current.identifierForVendor!.uuidString, myGroup: myGroup)
@@ -82,11 +75,11 @@ class Bodybuilder {
         return ((50 * _level * _level * _level) - (150 * _level * _level) + (400 * _level)) / 3
     }
     
-    func getPercentExperienceToBar() -> Float {
+    func getPercentStrength() -> Float {
         if(level>1){
-            return ( Float(experience - getExperienceForLevel(_level: level)) / Float(getExperienceForLevel(_level: level + 1) - getExperienceForLevel(_level: level)))
+            return ( Float(strength - getExperienceForLevel(_level: level)) / Float(getExperienceForLevel(_level: level + 1) - getExperienceForLevel(_level: level)))
         }
-        return ( Float(experience) / Float(getExperienceForLevel(_level: level + 1)) )
+        return ( Float(strength) / Float(getExperienceForLevel(_level: level + 1)) )
     }
     
     func getImageLevel() -> Int {
@@ -104,17 +97,15 @@ class Bodybuilder {
     }
 
     
-    //EXPERIENCE
+    //STRENGTH
     
-    func boostExperienceStep(step: Int) {
-        experience += step
+    func boostStrengthGrow(step: Int) {
+        strength += step
     }
     
-    func increaseExperiencePerSecond() {
+    func increaseStrengthGrow() {
         let nextLevelExp = getExperienceForLevel(_level: level + 1)
-        print("NEXT LEVEL:", nextLevelExp)
-        print("EXPL:", experience)
-        if (experience >= nextLevelExp){
+        if (strength >= nextLevelExp){
             level += 1
             do {
                 audioPlayer = try AVAudioPlayer(contentsOf: URL.init(fileURLWithPath: Bundle.main.path(forResource: "level_up", ofType: "wav")!))
@@ -124,20 +115,20 @@ class Bodybuilder {
             }
             audioPlayer.play()
         }
-        experience += experienceIncreaseValue
+        strength += strengthGrowth
     }
     
-    func getExperience() -> Int{
-        return experience
+    func getStrength() -> Int{
+        return strength
     }
     
     
-    func getExperienceIncreaseValue() -> Int {
-        return experienceIncreaseValue;
+    func getStrengthGrowth() -> Int {
+        return strengthGrowth;
     }
     
-    func boostExperienceIncreaseValue(step: Int) {
-        experienceIncreaseValue += step
+    func booststrengthGrowth(step: Int) {
+        strengthGrowth += step
     }
     
     //ENERGY
@@ -179,13 +170,15 @@ class Bodybuilder {
         return String(0.05 * Float(level) * 0.55)
     }
     func increaseCash(){
-        cash += (cashIncreaseValue * Float(level) * 0.55)
+        print(Float(level))
+        print("lv: \(level)")
+        cash += (0.05 * Float(level) * 0.55)
     }
     
     func buyItem(price: Float, strengthBoost: Int) -> Bool{
         if(cash >= price) {
             cash -= price
-            experienceIncreaseValue += strengthBoost
+            strengthGrowth += strengthBoost
             return true
         }
         
@@ -194,43 +187,29 @@ class Bodybuilder {
     
     func saveData() {
         updateSingleIntegerRecord(value: level, recordName: "level")
-        updateSingleIntegerRecord(value: click_count, recordName: "click_count")
-        updateSingleIntegerRecord(value: experience, recordName: "strength")
-        updateSingleIntegerRecord(value: experienceIncreaseValue, recordName: "strength_growth")
-        updateSingleIntegerRecord(value: time_on_gym, recordName: "time_on_gym")
-        updateSingleIntegerRecord(value: money_spend, recordName: "money_spend")
-        updateSingleFloatRecord(value: cash, recordName: "coins")
+        updateSingleIntegerRecord(value: strength, recordName: "strength")
+        updateSingleIntegerRecord(value: strengthGrowth, recordName: "strength_growth")
+        updateSingleFloatRecord(value: cash, recordName: "cash")
         updateSingleStringRecord(value: nickname, recordName: "nickname")
     }
     
     func loadData() {
         level = getIntRecord(recordName: "level")
-        cash = getFloatRecord(recordName: "coins")
-        experience = getIntRecord(recordName: "strength")
-        experienceIncreaseValue = getIntRecord(recordName: "strength_growth")
-        time_on_gym = getIntRecord(recordName: "time_on_gym")
-        money_spend = getIntRecord(recordName: "money_spend")
-        click_count = getIntRecord(recordName: "click_count")
+        cash = getFloatRecord(recordName: "cash")
+        strength = getIntRecord(recordName: "strength")
+        strengthGrowth = getIntRecord(recordName: "strength_growth")
         nickname = getStringRecord(recordName: "nickname")
     }
     
     func restartData() {
-        updateSingleIntegerRecord(value: 0, recordName: "click_count")
         updateSingleIntegerRecord(value: 0, recordName: "strength")
         updateSingleIntegerRecord(value: 1, recordName: "strength_growth")
-        updateSingleIntegerRecord(value: 0, recordName: "time_on_gym")
-        updateSingleIntegerRecord(value: 0, recordName: "money_spend")
-        updateSingleFloatRecord(value: 0.00, recordName: "coins")
-        updateSingleStringRecord(value: "", recordName: "nickname")
+        updateSingleFloatRecord(value: 0.00, recordName: "cash")
         updateSingleIntegerRecord(value: 1, recordName: "level")
-        click_count = 0
-        nickname = ""
-        experience = 0
-        time_on_gym = 0
+        strength = 0
         cash = 0.00
-        money_spend = 0
         level = 1
-        experienceIncreaseValue = 1
+        strengthGrowth = 1
     }
     
 }

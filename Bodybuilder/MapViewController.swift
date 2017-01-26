@@ -102,8 +102,8 @@ var trainingStarted: Bool = false
 extension MapViewController: CLLocationManagerDelegate {
     
     func onTheGymAction() {
-        bodybuilder.increaseExperiencePerSecond()
-        experienceLabel.text = "\(bodybuilder.getExperience()) / \(bodybuilder.getExperienceForLevel(_level: bodybuilder.getLeveL()+1))"
+        bodybuilder.increaseStrengthGrow()
+        experienceLabel.text = "\(bodybuilder.getStrength()) / \(bodybuilder.getExperienceForLevel(_level: bodybuilder.getLeveL()+1))"
     }
     
     func showGymView() {
@@ -174,7 +174,7 @@ extension MapViewController: CLLocationManagerDelegate {
     func startTraining() {
         print("TRAINING STARTED")
         if bodybuilder.getEnergy() > 0 {
-            bodybuilder.increaseExperiencePerSecond()
+            bodybuilder.increaseStrengthGrow()
             bodybuilder.consumptionEnergy()
         } else {
             trainingStarted = false
@@ -216,11 +216,11 @@ extension MapViewController: CLLocationManagerDelegate {
                 gymNameLabel.text = currentGym.getName()
                 
                 levelLabel.text = "LEVEL " + String(bodybuilder.getLeveL())
-                levelPercentLabel.text = "\(Int(bodybuilder.getPercentExperienceToBar()*100))%"
-                print(bodybuilder.getPercentExperienceToBar())
-                levelBar.progress = bodybuilder.getPercentExperienceToBar()
-                experienceLabel.text = "\(bodybuilder.getExperience()) / \(bodybuilder.getExperienceForLevel(_level: bodybuilder.getLeveL()+1))"
-                expRateLabel.text = "\(bodybuilder.getExperienceIncreaseValue()) strength / sec"
+                levelPercentLabel.text = "\(Int(bodybuilder.getPercentStrength()*100))%"
+                print(bodybuilder.getPercentStrength())
+                levelBar.progress = bodybuilder.getPercentStrength()
+                experienceLabel.text = "\(bodybuilder.getStrength()) / \(bodybuilder.getExperienceForLevel(_level: bodybuilder.getLeveL()+1))"
+                expRateLabel.text = "\(bodybuilder.getStrengthGrowth()) strength / sec"
                 
                 if bodybuilder.getEnergy() > 0 {
                     hideNoEnergyView()

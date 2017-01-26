@@ -32,13 +32,13 @@ class StatsViewController: UIViewController {
     }
     
     func updateUserData() {
-        strengthLabel.text = String(bodybuilder.getExperience())
+        strengthLabel.text = String(bodybuilder.getStrength())
         cashLabel.text = "\(String(format: "%.2f", bodybuilder.getCash()))$"
-        strengthGrowthLabel.text = String(bodybuilder.getExperienceIncreaseValue())
+        strengthGrowthLabel.text = String(bodybuilder.getStrengthGrowth())
         EnergyLabel.text = "\(String(bodybuilder.getEnergy()))%"
         LevelLabel.text = String(bodybuilder.getLeveL())
-        experienceBar.progress = bodybuilder.getPercentExperienceToBar()
-        ExperiencePercentLabel.text = "\(Int(bodybuilder.getPercentExperienceToBar()*100))%"
+        experienceBar.progress = bodybuilder.getPercentStrength()
+        ExperiencePercentLabel.text = "\(Int(bodybuilder.getPercentStrength()*100))%"
         energyPercentLabel.text = "\(Int(bodybuilder.getEnergyPercent()))%"
         EnergyBar.progress = bodybuilder.getEnergyPercent()/100
         trainingTimeLeft.text = secondsToHoursMinutesSeconds(seconds: bodybuilder.getEnergy())
