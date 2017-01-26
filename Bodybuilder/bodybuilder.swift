@@ -24,11 +24,24 @@ class Bodybuilder {
     var click_count: Int = 0
     var time_on_gym: Int = 0
     var money_spend: Int = 0
-    var nickname: String = ""
+    var nickname: String = "Player"
     
     init() {
+        
         print("BODYBUILDER INIT")
         print("DEVICE UUID: \(UIDevice.current.identifierForVendor!.uuidString)")
+        let myGroup = DispatchGroup()
+        myGroup.enter()
+        httpRequest.getPlayer(uuid: UIDevice.current.identifierForVendor!.uuidString, myGroup: myGroup)
+        myGroup.notify(queue: DispatchQueue.main, execute: {
+            var player = httpRequest.player
+            DispatchQueue.main.async{
+                player = httpRequest.player
+                if player == nil {
+                    httpRequest.addPlayer()
+                }
+            }
+        })
     }
     
     func setNickname(_nickname: String) {
