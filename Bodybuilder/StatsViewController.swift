@@ -46,6 +46,7 @@ class StatsViewController: UIViewController {
     }
     
     func saveDataTimerSchedule() {
+        httpRequest.updatePlayer(uuid: UIDevice.current.identifierForVendor!.uuidString)
         bodybuilder.saveData()
     }
     

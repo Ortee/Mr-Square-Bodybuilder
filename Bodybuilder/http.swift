@@ -13,8 +13,9 @@ import SwiftyJSON
 
 class Http {
     public var players: [User] = [];
+    public var player: JSON = []
     
-    func getPlayers(players: [User], tableView: UITableView, myGroup: DispatchGroup){
+    func getPlayers(players: [User], tableView: UITableView, myGroup: DispatchGroup) {
         
         var playersArray = players
         Alamofire.request("http://orteedev.pl:3000/api/users").responseJSON { response in
@@ -34,5 +35,45 @@ class Http {
             myGroup.leave()
         }
     }
+    
+    func getPlayer(uuid: String, myGroup: DispatchGroup) {
+        Alamofire.request("http://orteedev.pl:3000/api/users/\(uuid)").responseJSON { response in
+            debugPrint(response)
+            let json = JSON(data: response.data!)
+            self.player = json
+            myGroup.leave()
+        }
+    }
+    
+    func addPlayer() {
+        let random = Int(arc4random_uniform(9000))
+
+        let params: Parameters = [
+            "device_uuid": "\(UIDevice.current.identifierForVendor!.uuidString)",
+            "level": bodybuilder.getLeveL(),
+            "strength": bodybuilder.getExperience(),
+            "nickname": "Player\(random)"
+        ]
+
+        Alamofire.request("http://orteedev.pl:3000/api/users", method: .post, parameters: params, encoding: JSONEncoding.default).responseJSON { response in
+            debugPrint(response)
+            bodybuilder.setNickname(_nickname: "Player\(random)")
+        }
+        
+    }
+    
+    func updatePlayer(uuid: String) {
+        let params: Parameters = [
+            "device_uuid": "\(uuid)",
+            "level": bodybuilder.getLeveL(),
+            "strength": bodybuilder.getExperience(),
+            "nickname": bodybuilder.getNickname()
+        ]
+        
+        Alamofire.request("http://orteedev.pl:3000/api/users/\(uuid)", method: .put, parameters: params, encoding: JSONEncoding.default).responseJSON { response in
+            debugPrint(response)
+        }
+    }
 }
+
 var httpRequest: Http = Http()
