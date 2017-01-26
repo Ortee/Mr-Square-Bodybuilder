@@ -11,12 +11,19 @@ import UIKit
 class SettingsViewController: UIViewController {
 
     @IBOutlet weak var nicknameFiled: UITextField!
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         nicknameFiled.text = bodybuilder.getNickname()
-
-        // Do any additional setup after loading the view.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
     }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
