@@ -157,7 +157,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.24313725490196078" blue="0.30980392156862746" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Stats" selectedImage="01_water" id="6Zw-MC-klj"/>
+                    <tabBarItem key="tabBarItem" title="Stats" image="trophy" selectedImage="trophy" id="6Zw-MC-klj"/>
                     <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -176,7 +176,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1951" y="110"/>
+            <point key="canvasLocation" x="1950" y="168"/>
         </scene>
         <!--Settings-->
         <scene sceneID="Y0M-tj-OUb">
@@ -442,7 +442,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.24313725489999999" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="More" id="qoh-sy-oIN"/>
+                    <tabBarItem key="tabBarItem" title="More" image="more" selectedImage="more" id="qoh-sy-oIN"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lSg-iJ-MUt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -656,7 +656,13 @@
                         </subviews>
                         <color key="backgroundColor" red="0.92549019610000005" green="0.92549019610000005" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" id="33M-fK-xOe"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="mark" selectedImage="mark" id="33M-fK-xOe">
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
+                                <color key="value" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <connections>
                         <outlet property="_experienceLabel" destination="5oe-za-KNM" id="CJT-mv-2CF"/>
                         <outlet property="_timeLabel" destination="vj4-R7-Axx" id="bah-Kb-XGU"/>
@@ -1386,9 +1392,9 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="NDM-Xj-uWH"/>
-                        <segue destination="0KP-yO-cCH" kind="relationship" relationship="viewControllers" id="beO-Hc-GXC"/>
                         <segue destination="ns6-Cw-aO1" kind="relationship" relationship="viewControllers" id="UHq-RE-oWf"/>
-                        <segue destination="4pP-4x-gBG" kind="relationship" relationship="viewControllers" id="4lQ-Zg-moh"/>
+                        <segue destination="0KP-yO-cCH" kind="relationship" relationship="viewControllers" id="eXX-gH-jcX"/>
+                        <segue destination="4pP-4x-gBG" kind="relationship" relationship="viewControllers" id="vv0-jd-jw1"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jnb-2t-y7a" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1711,7 +1717,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.20000000000000001" green="0.24313725489999999" blue="0.30980392159999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Sklep" id="XXG-OW-sjN"/>
+                    <tabBarItem key="tabBarItem" title="Sklep" image="shopping-cart" selectedImage="shopping-cart" id="XXG-OW-sjN"/>
                     <connections>
                         <outlet property="shopSegmentedControl" destination="crJ-LT-XhA" id="cHm-Pr-iwS"/>
                         <outlet property="shopTableView" destination="WQA-Qq-OW7" id="m7j-xN-jVe"/>
@@ -1818,14 +1824,19 @@
         <image name="dumbbell" width="512" height="512"/>
         <image name="dumbbell2" width="512" height="512"/>
         <image name="heart" width="512" height="512"/>
+        <image name="mark" width="32" height="32"/>
+        <image name="more" width="32" height="32"/>
         <image name="pizza" width="256" height="256"/>
         <image name="ranking_1" width="512" height="512"/>
         <image name="ranking_2" width="512" height="512"/>
         <image name="settings" width="512" height="512"/>
         <image name="shop_1" width="512" height="512"/>
+        <image name="shopping-cart" width="32" height="32"/>
         <image name="sport-shoe" width="512" height="512"/>
+        <image name="trophy" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="2lh-0W-Byj"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" red="0.74901960779999999" green="0.33333333329999998" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
 </document>

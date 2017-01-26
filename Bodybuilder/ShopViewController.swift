@@ -14,6 +14,7 @@ class ShopeViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var userBalance: UILabel!
     @IBOutlet weak var shopSegmentedControl: UISegmentedControl!
     @IBOutlet weak var shopTableView: UITableView!
+    
     var audioPlayer = AVAudioPlayer()
     
     func updateBalance() {
