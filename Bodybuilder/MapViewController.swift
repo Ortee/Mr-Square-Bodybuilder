@@ -172,7 +172,6 @@ extension MapViewController: CLLocationManagerDelegate {
     }
     
     func startTraining() {
-        print("TRAINING STARTED")
         if bodybuilder.getEnergy() > 0 {
             bodybuilder.increaseStrengthGrow()
             bodybuilder.consumptionEnergy()
@@ -183,7 +182,6 @@ extension MapViewController: CLLocationManagerDelegate {
     }
     
     func stopTraining() {
-        print("TRAINING STOPPED")
         trainingTimer.invalidate()
         trainButton.isHidden = false
         _trainButton.isHidden = true
@@ -195,9 +193,7 @@ extension MapViewController: CLLocationManagerDelegate {
     func checkGymLocation() {
         if gymList.getGyms().count > 0 {
             queueTimer.invalidate()
-            print("GYMS FOUND: \(gymList.getGyms().count)")
             for gym in gymList.getGyms() {
-                print("Gym name: ", gym.getName())
                 let position = CLLocationCoordinate2D(latitude: gym.getLatitude(), longitude: gym.getLongitude())
                 let marker = GMSMarker(position: position)
                 marker.icon = UIImage(named: "gym-marker")
@@ -217,7 +213,6 @@ extension MapViewController: CLLocationManagerDelegate {
                 
                 levelLabel.text = "LEVEL " + String(bodybuilder.getLeveL())
                 levelPercentLabel.text = "\(Int(bodybuilder.getPercentStrength()*100))%"
-                print(bodybuilder.getPercentStrength())
                 levelBar.progress = bodybuilder.getPercentStrength()
                 experienceLabel.text = "\(bodybuilder.getStrength()) / \(bodybuilder.getExperienceForLevel(_level: bodybuilder.getLeveL()+1))"
                 expRateLabel.text = "\(bodybuilder.getStrengthGrowth()) strength / sec"
@@ -251,7 +246,6 @@ extension MapViewController: CLLocationManagerDelegate {
     // Handle incoming location events.
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location: CLLocation = locations.last!
-        print("Location: \(location.coordinate.latitude) \(location.coordinate.longitude)")
         position.setPosition(_latitude: location.coordinate.latitude, _longitude: location.coordinate.longitude)
         queueTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(checkGymLocation), userInfo: nil, repeats: true)
         // get Nerby Gyms

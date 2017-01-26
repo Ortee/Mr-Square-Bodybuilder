@@ -109,6 +109,7 @@ class FoodDropViewController: UIViewController {
         finishView.isHidden = false
         finishCashLabel.text = "You earned \(Float(Float(points) * 0.1))$"
         bodybuilder.addCash(count: Float(Float(points) * 0.1))
+        points = 0
         updateBalance()
     }
     

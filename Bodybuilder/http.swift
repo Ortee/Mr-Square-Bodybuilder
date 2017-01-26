@@ -19,7 +19,6 @@ class Http {
         
         var playersArray = players
         Alamofire.request("http://orteedev.pl:3000/api/users").responseJSON { response in
-            debugPrint(response)
             
             let json = JSON(data: response.data!)
             playersArray.removeAll()
@@ -38,7 +37,6 @@ class Http {
     
     func getPlayer(uuid: String, myGroup: DispatchGroup) {
         Alamofire.request("http://orteedev.pl:3000/api/users/\(uuid)").responseJSON { response in
-            debugPrint(response)
             let json = JSON(data: response.data!)
             self.player = json
             myGroup.leave()
@@ -56,7 +54,6 @@ class Http {
         ]
 
         Alamofire.request("http://orteedev.pl:3000/api/users", method: .post, parameters: params, encoding: JSONEncoding.default).responseJSON { response in
-            debugPrint(response)
             bodybuilder.setNickname(_nickname: "Player\(random)")
         }
         
@@ -71,7 +68,6 @@ class Http {
         ]
         
         Alamofire.request("http://orteedev.pl:3000/api/users/\(uuid)", method: .put, parameters: params, encoding: JSONEncoding.default).responseJSON { response in
-            debugPrint(response)
         }
     }
 }

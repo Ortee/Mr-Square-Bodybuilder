@@ -170,8 +170,6 @@ class Bodybuilder {
         return String(0.05 * Float(level) * 0.55)
     }
     func increaseCash(){
-        print(Float(level))
-        print("lv: \(level)")
         cash += (0.05 * Float(level) * 0.55)
     }
     
